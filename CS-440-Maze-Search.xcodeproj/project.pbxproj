@@ -19,6 +19,10 @@
 		0552468C17F0A56900D90397 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0552467417F0A56900D90397 /* UIKit.framework */; };
 		0552469417F0A56900D90397 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0552469217F0A56900D90397 /* InfoPlist.strings */; };
 		0552469617F0A56900D90397 /* CS_440_Maze_SearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0552469517F0A56900D90397 /* CS_440_Maze_SearchTests.m */; };
+		055246A417F0A92500D90397 /* smallMaze.txt in Resources */ = {isa = PBXBuildFile; fileRef = 055246A017F0A92500D90397 /* smallMaze.txt */; };
+		055246A517F0A92500D90397 /* mediumMaze.txt in Resources */ = {isa = PBXBuildFile; fileRef = 055246A117F0A92500D90397 /* mediumMaze.txt */; };
+		055246A617F0A92500D90397 /* bigMaze.txt in Resources */ = {isa = PBXBuildFile; fileRef = 055246A217F0A92500D90397 /* bigMaze.txt */; };
+		055246A717F0A92500D90397 /* openMaze.txt in Resources */ = {isa = PBXBuildFile; fileRef = 055246A317F0A92500D90397 /* openMaze.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		0552469117F0A56900D90397 /* CS-440-Maze-SearchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CS-440-Maze-SearchTests-Info.plist"; sourceTree = "<group>"; };
 		0552469317F0A56900D90397 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0552469517F0A56900D90397 /* CS_440_Maze_SearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CS_440_Maze_SearchTests.m; sourceTree = "<group>"; };
+		055246A017F0A92500D90397 /* smallMaze.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = smallMaze.txt; sourceTree = "<group>"; };
+		055246A117F0A92500D90397 /* mediumMaze.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mediumMaze.txt; sourceTree = "<group>"; };
+		055246A217F0A92500D90397 /* bigMaze.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bigMaze.txt; sourceTree = "<group>"; };
+		055246A317F0A92500D90397 /* openMaze.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = openMaze.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,7 @@
 		0552467717F0A56900D90397 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0552469F17F0A91000D90397 /* Mazes */,
 				0552467817F0A56900D90397 /* CS-440-Maze-Search-Info.plist */,
 				0552467917F0A56900D90397 /* InfoPlist.strings */,
 				0552467C17F0A56900D90397 /* main.m */,
@@ -142,6 +151,17 @@
 				0552469217F0A56900D90397 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0552469F17F0A91000D90397 /* Mazes */ = {
+			isa = PBXGroup;
+			children = (
+				055246A017F0A92500D90397 /* smallMaze.txt */,
+				055246A117F0A92500D90397 /* mediumMaze.txt */,
+				055246A217F0A92500D90397 /* bigMaze.txt */,
+				055246A317F0A92500D90397 /* openMaze.txt */,
+			);
+			name = Mazes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +240,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0552467B17F0A56900D90397 /* InfoPlist.strings in Resources */,
+				055246A617F0A92500D90397 /* bigMaze.txt in Resources */,
+				055246A417F0A92500D90397 /* smallMaze.txt in Resources */,
+				055246A717F0A92500D90397 /* openMaze.txt in Resources */,
+				055246A517F0A92500D90397 /* mediumMaze.txt in Resources */,
 				0552468317F0A56900D90397 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +465,7 @@
 				0552469B17F0A56900D90397 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0552469C17F0A56900D90397 /* Build configuration list for PBXNativeTarget "CS-440-Maze-SearchTests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +474,7 @@
 				0552469E17F0A56900D90397 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
