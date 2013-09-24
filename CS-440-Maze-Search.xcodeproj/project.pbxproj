@@ -23,6 +23,15 @@
 		055246A517F0A92500D90397 /* mediumMaze.txt in Resources */ = {isa = PBXBuildFile; fileRef = 055246A117F0A92500D90397 /* mediumMaze.txt */; };
 		055246A617F0A92500D90397 /* bigMaze.txt in Resources */ = {isa = PBXBuildFile; fileRef = 055246A217F0A92500D90397 /* bigMaze.txt */; };
 		055246A717F0A92500D90397 /* openMaze.txt in Resources */ = {isa = PBXBuildFile; fileRef = 055246A317F0A92500D90397 /* openMaze.txt */; };
+		055246BA17F0ADEF00D90397 /* BasicPathfindingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246B917F0ADEF00D90397 /* BasicPathfindingViewController.m */; };
+		055246BD17F0ADFE00D90397 /* SearchWithDifferentCostFunctionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246BC17F0ADFE00D90397 /* SearchWithDifferentCostFunctionsViewController.m */; };
+		055246C017F0AE0C00D90397 /* SearchWithMultipleDotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246BF17F0AE0C00D90397 /* SearchWithMultipleDotsViewController.m */; };
+		055246C317F0AE1D00D90397 /* SuboptimalSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246C217F0AE1D00D90397 /* SuboptimalSearchViewController.m */; };
+		055246CA17F0CCBF00D90397 /* MazeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246C917F0CCBF00D90397 /* MazeManager.m */; };
+		055246CD17F0CDAF00D90397 /* Maze.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246CC17F0CDAF00D90397 /* Maze.m */; };
+		055246D317F0CEDA00D90397 /* QueuePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246D217F0CEDA00D90397 /* QueuePool.m */; };
+		055246D617F0DCDC00D90397 /* MazeParsingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246D517F0DCDC00D90397 /* MazeParsingOperation.m */; };
+		055246D917F1180B00D90397 /* SupportedMazes.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246D817F1180B00D90397 /* SupportedMazes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +65,24 @@
 		055246A117F0A92500D90397 /* mediumMaze.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mediumMaze.txt; sourceTree = "<group>"; };
 		055246A217F0A92500D90397 /* bigMaze.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bigMaze.txt; sourceTree = "<group>"; };
 		055246A317F0A92500D90397 /* openMaze.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = openMaze.txt; sourceTree = "<group>"; };
+		055246B817F0ADEF00D90397 /* BasicPathfindingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicPathfindingViewController.h; sourceTree = "<group>"; };
+		055246B917F0ADEF00D90397 /* BasicPathfindingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicPathfindingViewController.m; sourceTree = "<group>"; };
+		055246BB17F0ADFE00D90397 /* SearchWithDifferentCostFunctionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchWithDifferentCostFunctionsViewController.h; sourceTree = "<group>"; };
+		055246BC17F0ADFE00D90397 /* SearchWithDifferentCostFunctionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchWithDifferentCostFunctionsViewController.m; sourceTree = "<group>"; };
+		055246BE17F0AE0C00D90397 /* SearchWithMultipleDotsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchWithMultipleDotsViewController.h; sourceTree = "<group>"; };
+		055246BF17F0AE0C00D90397 /* SearchWithMultipleDotsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchWithMultipleDotsViewController.m; sourceTree = "<group>"; };
+		055246C117F0AE1D00D90397 /* SuboptimalSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuboptimalSearchViewController.h; sourceTree = "<group>"; };
+		055246C217F0AE1D00D90397 /* SuboptimalSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuboptimalSearchViewController.m; sourceTree = "<group>"; };
+		055246C817F0CCBF00D90397 /* MazeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MazeManager.h; sourceTree = "<group>"; };
+		055246C917F0CCBF00D90397 /* MazeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MazeManager.m; sourceTree = "<group>"; };
+		055246CB17F0CDAF00D90397 /* Maze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maze.h; sourceTree = "<group>"; };
+		055246CC17F0CDAF00D90397 /* Maze.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Maze.m; sourceTree = "<group>"; };
+		055246D117F0CEDA00D90397 /* QueuePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueuePool.h; sourceTree = "<group>"; };
+		055246D217F0CEDA00D90397 /* QueuePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueuePool.m; sourceTree = "<group>"; };
+		055246D417F0DCDC00D90397 /* MazeParsingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MazeParsingOperation.h; path = ../MazeParsingOperation.h; sourceTree = "<group>"; };
+		055246D517F0DCDC00D90397 /* MazeParsingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MazeParsingOperation.m; path = ../MazeParsingOperation.m; sourceTree = "<group>"; };
+		055246D717F1180B00D90397 /* SupportedMazes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportedMazes.h; sourceTree = "<group>"; };
+		055246D817F1180B00D90397 /* SupportedMazes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportedMazes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +142,9 @@
 		0552467617F0A56900D90397 /* CS-440-Maze-Search */ = {
 			isa = PBXGroup;
 			children = (
+				055246C517F0CC4100D90397 /* Controller */,
+				055246C717F0CC8400D90397 /* View */,
+				055246C617F0CC7C00D90397 /* Model */,
 				0552467F17F0A56900D90397 /* AppDelegate.h */,
 				0552468017F0A56900D90397 /* AppDelegate.m */,
 				0552468217F0A56900D90397 /* Images.xcassets */,
@@ -162,6 +192,77 @@
 				055246A317F0A92500D90397 /* openMaze.txt */,
 			);
 			name = Mazes;
+			sourceTree = "<group>";
+		};
+		055246A817F0AC8C00D90397 /* 1.1 Basic Pathfinding */ = {
+			isa = PBXGroup;
+			children = (
+				055246B817F0ADEF00D90397 /* BasicPathfindingViewController.h */,
+				055246B917F0ADEF00D90397 /* BasicPathfindingViewController.m */,
+			);
+			name = "1.1 Basic Pathfinding";
+			sourceTree = "<group>";
+		};
+		055246A917F0AC9900D90397 /* 1.2 Search with Different Cost Functions */ = {
+			isa = PBXGroup;
+			children = (
+				055246BB17F0ADFE00D90397 /* SearchWithDifferentCostFunctionsViewController.h */,
+				055246BC17F0ADFE00D90397 /* SearchWithDifferentCostFunctionsViewController.m */,
+			);
+			name = "1.2 Search with Different Cost Functions";
+			sourceTree = "<group>";
+		};
+		055246AA17F0ACBC00D90397 /* 1.3 Search with Multiple Dots */ = {
+			isa = PBXGroup;
+			children = (
+				055246BE17F0AE0C00D90397 /* SearchWithMultipleDotsViewController.h */,
+				055246BF17F0AE0C00D90397 /* SearchWithMultipleDotsViewController.m */,
+			);
+			name = "1.3 Search with Multiple Dots";
+			sourceTree = "<group>";
+		};
+		055246AB17F0ACCC00D90397 /* 1.4 Suboptimal Search */ = {
+			isa = PBXGroup;
+			children = (
+				055246C117F0AE1D00D90397 /* SuboptimalSearchViewController.h */,
+				055246C217F0AE1D00D90397 /* SuboptimalSearchViewController.m */,
+			);
+			name = "1.4 Suboptimal Search";
+			sourceTree = "<group>";
+		};
+		055246C517F0CC4100D90397 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				055246A817F0AC8C00D90397 /* 1.1 Basic Pathfinding */,
+				055246A917F0AC9900D90397 /* 1.2 Search with Different Cost Functions */,
+				055246AA17F0ACBC00D90397 /* 1.3 Search with Multiple Dots */,
+				055246AB17F0ACCC00D90397 /* 1.4 Suboptimal Search */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		055246C617F0CC7C00D90397 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				055246C817F0CCBF00D90397 /* MazeManager.h */,
+				055246C917F0CCBF00D90397 /* MazeManager.m */,
+				055246CB17F0CDAF00D90397 /* Maze.h */,
+				055246CC17F0CDAF00D90397 /* Maze.m */,
+				055246D417F0DCDC00D90397 /* MazeParsingOperation.h */,
+				055246D517F0DCDC00D90397 /* MazeParsingOperation.m */,
+				055246D117F0CEDA00D90397 /* QueuePool.h */,
+				055246D217F0CEDA00D90397 /* QueuePool.m */,
+				055246D717F1180B00D90397 /* SupportedMazes.h */,
+				055246D817F1180B00D90397 /* SupportedMazes.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		055246C717F0CC8400D90397 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +364,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055246BA17F0ADEF00D90397 /* BasicPathfindingViewController.m in Sources */,
+				055246C017F0AE0C00D90397 /* SearchWithMultipleDotsViewController.m in Sources */,
+				055246C317F0AE1D00D90397 /* SuboptimalSearchViewController.m in Sources */,
+				055246BD17F0ADFE00D90397 /* SearchWithDifferentCostFunctionsViewController.m in Sources */,
 				0552468117F0A56900D90397 /* AppDelegate.m in Sources */,
+				055246D617F0DCDC00D90397 /* MazeParsingOperation.m in Sources */,
+				055246D917F1180B00D90397 /* SupportedMazes.m in Sources */,
+				055246CA17F0CCBF00D90397 /* MazeManager.m in Sources */,
+				055246CD17F0CDAF00D90397 /* Maze.m in Sources */,
+				055246D317F0CEDA00D90397 /* QueuePool.m in Sources */,
 				0552467D17F0A56900D90397 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
