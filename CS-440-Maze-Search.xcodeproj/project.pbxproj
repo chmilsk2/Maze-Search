@@ -32,6 +32,9 @@
 		055246D317F0CEDA00D90397 /* QueuePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246D217F0CEDA00D90397 /* QueuePool.m */; };
 		055246D617F0DCDC00D90397 /* MazeParsingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246D517F0DCDC00D90397 /* MazeParsingOperation.m */; };
 		055246D917F1180B00D90397 /* SupportedMazes.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246D817F1180B00D90397 /* SupportedMazes.m */; };
+		055246E117F23DAC00D90397 /* MazeAndAlgorithmListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246E017F23DAC00D90397 /* MazeAndAlgorithmListViewController.m */; };
+		055246E717F24DF800D90397 /* MazeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246E617F24DF800D90397 /* MazeView.m */; };
+		055246F217F2798C00D90397 /* SupportedAlgorithms.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246F117F2798C00D90397 /* SupportedAlgorithms.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,14 @@
 		055246D517F0DCDC00D90397 /* MazeParsingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MazeParsingOperation.m; path = ../MazeParsingOperation.m; sourceTree = "<group>"; };
 		055246D717F1180B00D90397 /* SupportedMazes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportedMazes.h; sourceTree = "<group>"; };
 		055246D817F1180B00D90397 /* SupportedMazes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportedMazes.m; sourceTree = "<group>"; };
+		055246DF17F23DAC00D90397 /* MazeAndAlgorithmListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MazeAndAlgorithmListViewController.h; sourceTree = "<group>"; };
+		055246E017F23DAC00D90397 /* MazeAndAlgorithmListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MazeAndAlgorithmListViewController.m; sourceTree = "<group>"; };
+		055246E517F24DF800D90397 /* MazeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MazeView.h; sourceTree = "<group>"; };
+		055246E617F24DF800D90397 /* MazeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MazeView.m; sourceTree = "<group>"; };
+		055246E817F26CDD00D90397 /* MazeViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MazeViewDataSource.h; sourceTree = "<group>"; };
+		055246F017F2798C00D90397 /* SupportedAlgorithms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportedAlgorithms.h; sourceTree = "<group>"; };
+		055246F117F2798C00D90397 /* SupportedAlgorithms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportedAlgorithms.m; sourceTree = "<group>"; };
+		055246F317F280FA00D90397 /* MazeAndAlgorithmListDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MazeAndAlgorithmListDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				055246C517F0CC4100D90397 /* Controller */,
+				055246DA17F23D4E00D90397 /* Maze and Algorithm List */,
 				055246C717F0CC8400D90397 /* View */,
 				055246C617F0CC7C00D90397 /* Model */,
 				0552467F17F0A56900D90397 /* AppDelegate.h */,
@@ -252,8 +264,10 @@
 				055246D517F0DCDC00D90397 /* MazeParsingOperation.m */,
 				055246D117F0CEDA00D90397 /* QueuePool.h */,
 				055246D217F0CEDA00D90397 /* QueuePool.m */,
-				055246D717F1180B00D90397 /* SupportedMazes.h */,
-				055246D817F1180B00D90397 /* SupportedMazes.m */,
+				055246F517F284C900D90397 /* Maze View Data Source */,
+				055246F417F2810000D90397 /* Maze and Algorithm List Delegate */,
+				055246EF17F2763D00D90397 /* Supported Algorithms */,
+				055246EE17F2763400D90397 /* Supported Mazes */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -261,8 +275,53 @@
 		055246C717F0CC8400D90397 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				055246E517F24DF800D90397 /* MazeView.h */,
+				055246E617F24DF800D90397 /* MazeView.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		055246DA17F23D4E00D90397 /* Maze and Algorithm List */ = {
+			isa = PBXGroup;
+			children = (
+				055246DF17F23DAC00D90397 /* MazeAndAlgorithmListViewController.h */,
+				055246E017F23DAC00D90397 /* MazeAndAlgorithmListViewController.m */,
+			);
+			name = "Maze and Algorithm List";
+			sourceTree = "<group>";
+		};
+		055246EE17F2763400D90397 /* Supported Mazes */ = {
+			isa = PBXGroup;
+			children = (
+				055246D717F1180B00D90397 /* SupportedMazes.h */,
+				055246D817F1180B00D90397 /* SupportedMazes.m */,
+			);
+			name = "Supported Mazes";
+			sourceTree = "<group>";
+		};
+		055246EF17F2763D00D90397 /* Supported Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				055246F017F2798C00D90397 /* SupportedAlgorithms.h */,
+				055246F117F2798C00D90397 /* SupportedAlgorithms.m */,
+			);
+			name = "Supported Algorithms";
+			sourceTree = "<group>";
+		};
+		055246F417F2810000D90397 /* Maze and Algorithm List Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				055246F317F280FA00D90397 /* MazeAndAlgorithmListDelegate.h */,
+			);
+			name = "Maze and Algorithm List Delegate";
+			sourceTree = "<group>";
+		};
+		055246F517F284C900D90397 /* Maze View Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				055246E817F26CDD00D90397 /* MazeViewDataSource.h */,
+			);
+			name = "Maze View Data Source";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,10 +426,13 @@
 				055246BA17F0ADEF00D90397 /* BasicPathfindingViewController.m in Sources */,
 				055246C017F0AE0C00D90397 /* SearchWithMultipleDotsViewController.m in Sources */,
 				055246C317F0AE1D00D90397 /* SuboptimalSearchViewController.m in Sources */,
+				055246E717F24DF800D90397 /* MazeView.m in Sources */,
 				055246BD17F0ADFE00D90397 /* SearchWithDifferentCostFunctionsViewController.m in Sources */,
 				0552468117F0A56900D90397 /* AppDelegate.m in Sources */,
+				055246F217F2798C00D90397 /* SupportedAlgorithms.m in Sources */,
 				055246D617F0DCDC00D90397 /* MazeParsingOperation.m in Sources */,
 				055246D917F1180B00D90397 /* SupportedMazes.m in Sources */,
+				055246E117F23DAC00D90397 /* MazeAndAlgorithmListViewController.m in Sources */,
 				055246CA17F0CCBF00D90397 /* MazeManager.m in Sources */,
 				055246CD17F0CDAF00D90397 /* Maze.m in Sources */,
 				055246D317F0CEDA00D90397 /* QueuePool.m in Sources */,
