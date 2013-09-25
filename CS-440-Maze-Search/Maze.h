@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, CellState) {
+typedef NS_ENUM(NSUInteger, CellState) {
 	CellStateWall,
 	CellStatePath,
 	CellStateStart,
@@ -18,10 +18,8 @@ typedef NS_ENUM(NSInteger, CellState) {
 @interface Maze : NSObject
 
 @property (readonly) NSString *name;
-
 @property (readonly) NSNumber *width;
 @property (readonly) NSNumber *height;
-
 @property NSArray *cells;
 
 - (id)initWithName:(NSString *)name cells:(NSArray *)cells width:(NSNumber *)width height:(NSNumber *)height;
