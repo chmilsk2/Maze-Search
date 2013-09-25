@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class Maze;
+
 @interface MazeManager : NSObject
 
-@property NSArray *mazes;
-
 + (MazeManager *)sharedMazeManager;
+- (Maze *)mazeAtIndex:(NSInteger)index;
 
 @end
