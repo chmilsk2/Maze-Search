@@ -9,10 +9,12 @@
 #import "QueuePool.h"
 
 #define MAZE_PARSING_OPERATION_QUEUE_NAME @"Maze Parsing Operation Queue"
+#define ALGORITHM_OPERATION_QUEUE_NAME @"Algorithm Operation Queue"
 
 @interface QueuePool ()
 
 @property (strong) NSOperationQueue *mazeParsingOperationQueue;
+@property (strong) NSOperationQueue *algorithmOperationQueue;
 
 @end
 
@@ -36,6 +38,11 @@
 	if (self) {
 		self.mazeParsingOperationQueue = [[NSOperationQueue alloc] init];
 		[self.mazeParsingOperationQueue setName:MAZE_PARSING_OPERATION_QUEUE_NAME];
+		[self.mazeParsingOperationQueue setMaxConcurrentOperationCount:1];
+		
+		self.algorithmOperationQueue = [[NSOperationQueue alloc] init];
+		[self.algorithmOperationQueue setName:ALGORITHM_OPERATION_QUEUE_NAME];
+		[self.algorithmOperationQueue setMaxConcurrentOperationCount:1];
 		
 		[self.mazeParsingOperationQueue addObserver:self forKeyPath:@"operationCount" options:0 context:NULL];
 	}
@@ -49,6 +56,10 @@
 		
 		if ([operationQueue.name isEqualToString:MAZE_PARSING_OPERATION_QUEUE_NAME]) {
 			NSLog(@"operations in %@: %d", MAZE_PARSING_OPERATION_QUEUE_NAME, [self.mazeParsingOperationQueue operationCount]);
+		}
+		
+		else if ([operationQueue.name isEqualToString:ALGORITHM_OPERATION_QUEUE_NAME]) {
+			NSLog(@"operations in %@: %d", ALGORITHM_OPERATION_QUEUE_NAME, [self.algorithmOperationQueue operationCount]);
 		}
 	}
 }

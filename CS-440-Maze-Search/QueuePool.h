@@ -11,6 +11,7 @@
 @interface QueuePool : NSOperationQueue
 
 @property (strong, readonly) NSOperationQueue *mazeParsingOperationQueue;
+@property (strong, readonly) NSOperationQueue *algorithmOperationQueue;
 
 + (QueuePool *)sharedQueuePool;
 
