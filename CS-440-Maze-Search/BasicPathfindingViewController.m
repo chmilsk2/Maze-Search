@@ -11,6 +11,10 @@
 #import "MazeAndAlgorithmListViewController.h"
 #import "Maze.h"
 #import "MazeView.h"
+#import "Solver.h"
+#import "SearchAlgorithmOperationFactory.h"
+#import "SupportedAlgorithms.h"
+#import "SearchAlgorithmOperation.h"
 
 #define PARSED_MAZE_NOTIFICATON @"Parsed Maze Notification"
 
@@ -18,11 +22,13 @@
 
 @property (nonatomic, strong) MazeView *mazeView;
 @property (nonatomic, strong) UIBarButtonItem *mazeAndAlgorithmListButton;
+@property (nonatomic, strong) UIBarButtonItem *startButton;
 
 @end
 
 @implementation BasicPathfindingViewController {
 	NSUInteger _selectedMazeIndex;
+	NSUInteger _selectedAlgorithmIndex;
 }
 
 - (id)init {
@@ -52,7 +58,18 @@
 - (void)setUpNavigation {
 	[self.navigationItem setTitle:self.navigationController.tabBarItem.title];
 	
-	[self.navigationItem setRightBarButtonItem:self.mazeAndAlgorithmListButton];
+	[self.navigationItem setLeftBarButtonItem:self.mazeAndAlgorithmListButton];
+	[self.navigationItem setRightBarButtonItem:self.startButton];
+}
+
+#pragma mark - Start Button
+
+- (UIBarButtonItem *)startButton {
+	if (!_startButton) {
+		_startButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(start)];
+	}
+	
+	return _startButton;
 }
 
 #pragma mark - Maze and Algorithm List Button
@@ -76,6 +93,26 @@
 	return _mazeView;
 }
 
+#pragma mark - Start
+
+- (void)start {
+	Solver *solver = [[Solver alloc] init];
+	
+	SearchAlgorithmOperationFactory *searchAlgorithmOperationFactory = [SearchAlgorithmOperationFactory searchAlgorithmOperationFactory];
+	
+	NSString *algorithmOperationName = AlgorithmNameAtIndex(_selectedAlgorithmIndex);
+	
+	SearchAlgorithmOperation *algorithmOperation = [searchAlgorithmOperationFactory searchAlgorithmOperationForName:algorithmOperationName];
+	
+	[solver solveWithMaze:[[MazeManager sharedMazeManager] mazeAtIndex:_selectedMazeIndex] algorithmOperation:algorithmOperation];
+}
+
+#pragma mark- Solver Delegate
+
+- (void)tookStep {
+	[self reloadMazeViewData];
+}
+
 #pragma mark - Maze and Algorithm List
 
 - (void)presentMazeAndAlgorithmList {
@@ -93,12 +130,11 @@
 	// update the selected maze index
 	_selectedMazeIndex = selectedMazeIndex;
 	
-	[self reloadMazeViewData];
+	// update the selected algorithm index
+	_selectedAlgorithmIndex = selectedAlgorithmIndex;
 	
-	// solve the maze
-#warning TODO: sovle the maze
+	[self reloadMazeViewData];
 }
-
 
 #pragma mark - Parsed Maze Notification
 
