@@ -7,3 +7,4 @@
 //
 
 NSArray * SupportedAlgorithms();
+NSString * AlgorithmNameAtIndex(NSInteger index);
