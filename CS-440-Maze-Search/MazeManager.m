@@ -43,7 +43,6 @@
 		_processingMazeNames = [NSMutableArray array];
 		
 		_mazeParsingQueue = [QueuePool sharedQueuePool].mazeParsingOperationQueue;
-		[_mazeParsingQueue setMaxConcurrentOperationCount:1];
 	}
 	
 	return self;
