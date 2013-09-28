@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "AlgorithmOperation.h"
 #import "AlgorithmOperationDelegate.h"
+#import "Maze.h"
+#import "Cell.h"
 
 @class Maze;
 
