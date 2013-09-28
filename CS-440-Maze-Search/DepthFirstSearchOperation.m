@@ -12,6 +12,7 @@
 
 - (void)main {
 	NSLog(@"perform depth first search here");
+	
 	[self didFinish];
 }
 
