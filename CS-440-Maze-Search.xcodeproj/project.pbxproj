@@ -41,7 +41,7 @@
 		05A8A52B17F3A5010011AD25 /* SearchAlgorithmOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A8A52A17F3A5010011AD25 /* SearchAlgorithmOperation.m */; };
 		05A8A53017F3AD320011AD25 /* SearchAlgorithmOperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A8A52F17F3AD320011AD25 /* SearchAlgorithmOperationFactory.m */; };
 		05A8A53617F3CF5D0011AD25 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A8A53517F3CF5D0011AD25 /* Cell.m */; };
-		05A8A53A17F3D1DE0011AD25 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A8A53917F3D1DE0011AD25 /* Queue.m */; };
+		05A8A53A17F3D1DE0011AD25 /* Frontier.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A8A53917F3D1DE0011AD25 /* Frontier.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,8 +117,9 @@
 		05A8A52F17F3AD320011AD25 /* SearchAlgorithmOperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchAlgorithmOperationFactory.m; sourceTree = "<group>"; };
 		05A8A53417F3CF5D0011AD25 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		05A8A53517F3CF5D0011AD25 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
-		05A8A53817F3D1DE0011AD25 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
-		05A8A53917F3D1DE0011AD25 /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Queue.m; sourceTree = "<group>"; };
+		05A8A53817F3D1DE0011AD25 /* Frontier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Frontier.h; sourceTree = "<group>"; };
+		05A8A53917F3D1DE0011AD25 /* Frontier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Frontier.m; sourceTree = "<group>"; };
+		05C4B6ED17F72C4F008832D1 /* CellState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellState.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,8 +282,7 @@
 		055246C617F0CC7C00D90397 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				05A8A53C17F3D1E90011AD25 /* Stack */,
-				05A8A53B17F3D1E40011AD25 /* Queue */,
+				05A8A53B17F3D1E40011AD25 /* Frontier */,
 				05A8A51F17F3A0740011AD25 /* Solver.h */,
 				05A8A52017F3A0740011AD25 /* Solver.m */,
 				05A8A52E17F3AD320011AD25 /* SearchAlgorithmOperationFactory.h */,
@@ -402,25 +402,19 @@
 			isa = PBXGroup;
 			children = (
 				05A8A53417F3CF5D0011AD25 /* Cell.h */,
+				05C4B6ED17F72C4F008832D1 /* CellState.h */,
 				05A8A53517F3CF5D0011AD25 /* Cell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
 		};
-		05A8A53B17F3D1E40011AD25 /* Queue */ = {
+		05A8A53B17F3D1E40011AD25 /* Frontier */ = {
 			isa = PBXGroup;
 			children = (
-				05A8A53817F3D1DE0011AD25 /* Queue.h */,
-				05A8A53917F3D1DE0011AD25 /* Queue.m */,
+				05A8A53817F3D1DE0011AD25 /* Frontier.h */,
+				05A8A53917F3D1DE0011AD25 /* Frontier.m */,
 			);
-			name = Queue;
-			sourceTree = "<group>";
-		};
-		05A8A53C17F3D1E90011AD25 /* Stack */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Stack;
+			name = Frontier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -522,7 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05A8A53A17F3D1DE0011AD25 /* Queue.m in Sources */,
+				05A8A53A17F3D1DE0011AD25 /* Frontier.m in Sources */,
 				05A8A52417F3A2420011AD25 /* DepthFirstSearchOperation.m in Sources */,
 				055246BA17F0ADEF00D90397 /* BasicPathfindingViewController.m in Sources */,
 				055246C017F0AE0C00D90397 /* SearchWithMultipleDotsViewController.m in Sources */,
