@@ -12,7 +12,6 @@
 
 @property Maze *maze;
 
-- (void)tookStep;
 - (void)didFinish;
 
 @end

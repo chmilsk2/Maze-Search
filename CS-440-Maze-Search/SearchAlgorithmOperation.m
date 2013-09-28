@@ -21,8 +21,4 @@
 	}
 }
 
-- (void)tookStep {
-	[self.delegate tookStep];
-}
-
 @end

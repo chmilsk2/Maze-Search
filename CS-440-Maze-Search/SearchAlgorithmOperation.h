@@ -18,7 +18,7 @@ typedef void(^AlgorithmHandler)();
 
 @interface SearchAlgorithmOperation : NSOperation <AlgorithmOperation>
 
-@property (weak) id <AlgorithmOperationDelegate> delegate;
+@property id <AlgorithmOperationDelegate> delegate;
 @property (copy) AlgorithmHandler algorithmCompletionHandler;
 
 @end
