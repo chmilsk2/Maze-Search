@@ -17,5 +17,6 @@
 - (NSUInteger)numberOfCols;
 - (NSUInteger)numberOfRows;
 - (NSUInteger)stateForRow:(NSUInteger)row col:(NSUInteger)col;
+- (BOOL)isVisitedForRow:(NSUInteger)row col:(NSUInteger)col;
 
 @end
