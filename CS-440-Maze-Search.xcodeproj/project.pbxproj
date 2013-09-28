@@ -40,6 +40,8 @@
 		05A8A52717F3A2590011AD25 /* BreadthFirstSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A8A52617F3A2590011AD25 /* BreadthFirstSearchOperation.m */; };
 		05A8A52B17F3A5010011AD25 /* SearchAlgorithmOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A8A52A17F3A5010011AD25 /* SearchAlgorithmOperation.m */; };
 		05A8A53017F3AD320011AD25 /* SearchAlgorithmOperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A8A52F17F3AD320011AD25 /* SearchAlgorithmOperationFactory.m */; };
+		05A8A53617F3CF5D0011AD25 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A8A53517F3CF5D0011AD25 /* Cell.m */; };
+		05A8A53A17F3D1DE0011AD25 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A8A53917F3D1DE0011AD25 /* Queue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,10 @@
 		05A8A52D17F3AB240011AD25 /* AlgorithmOperationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlgorithmOperationDelegate.h; sourceTree = "<group>"; };
 		05A8A52E17F3AD320011AD25 /* SearchAlgorithmOperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchAlgorithmOperationFactory.h; sourceTree = "<group>"; };
 		05A8A52F17F3AD320011AD25 /* SearchAlgorithmOperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchAlgorithmOperationFactory.m; sourceTree = "<group>"; };
+		05A8A53417F3CF5D0011AD25 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		05A8A53517F3CF5D0011AD25 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		05A8A53817F3D1DE0011AD25 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		05A8A53917F3D1DE0011AD25 /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Queue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +281,8 @@
 		055246C617F0CC7C00D90397 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				05A8A53C17F3D1E90011AD25 /* Stack */,
+				05A8A53B17F3D1E40011AD25 /* Queue */,
 				05A8A51F17F3A0740011AD25 /* Solver.h */,
 				05A8A52017F3A0740011AD25 /* Solver.m */,
 				05A8A52E17F3AD320011AD25 /* SearchAlgorithmOperationFactory.h */,
@@ -291,6 +299,7 @@
 				05A8A51717F39FD70011AD25 /* SolverDelegate.h */,
 				05A8A51917F3A0060011AD25 /* Maze Manager */,
 				05A8A51B17F3A0150011AD25 /* Maze */,
+				05A8A53717F3CF680011AD25 /* Cell */,
 				05A8A51C17F3A01D0011AD25 /* Maze Parsing */,
 				05A8A51E17F3A0480011AD25 /* Queue Pool */,
 				055246F517F284C900D90397 /* Maze View Data Source */,
@@ -387,6 +396,31 @@
 				055246D217F0CEDA00D90397 /* QueuePool.m */,
 			);
 			name = "Queue Pool";
+			sourceTree = "<group>";
+		};
+		05A8A53717F3CF680011AD25 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				05A8A53417F3CF5D0011AD25 /* Cell.h */,
+				05A8A53517F3CF5D0011AD25 /* Cell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		05A8A53B17F3D1E40011AD25 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				05A8A53817F3D1DE0011AD25 /* Queue.h */,
+				05A8A53917F3D1DE0011AD25 /* Queue.m */,
+			);
+			name = Queue;
+			sourceTree = "<group>";
+		};
+		05A8A53C17F3D1E90011AD25 /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Stack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,11 +522,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05A8A53A17F3D1DE0011AD25 /* Queue.m in Sources */,
 				05A8A52417F3A2420011AD25 /* DepthFirstSearchOperation.m in Sources */,
 				055246BA17F0ADEF00D90397 /* BasicPathfindingViewController.m in Sources */,
 				055246C017F0AE0C00D90397 /* SearchWithMultipleDotsViewController.m in Sources */,
 				055246C317F0AE1D00D90397 /* SuboptimalSearchViewController.m in Sources */,
 				055246E717F24DF800D90397 /* MazeView.m in Sources */,
+				05A8A53617F3CF5D0011AD25 /* Cell.m in Sources */,
 				05A8A52117F3A0740011AD25 /* Solver.m in Sources */,
 				055246BD17F0ADFE00D90397 /* SearchWithDifferentCostFunctionsViewController.m in Sources */,
 				0552468117F0A56900D90397 /* AppDelegate.m in Sources */,
