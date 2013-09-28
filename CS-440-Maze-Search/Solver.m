@@ -10,6 +10,8 @@
 #import "QueuePool.h"
 #import "SearchAlgorithmOperation.h"
 
+#define ALGORITHM_WAITING_INTERVAL .1
+
 @implementation Solver {
 	NSOperationQueue *_algorithmOperationQueue;
 }
@@ -37,6 +39,8 @@
 
 - (void)tookStep {
 	[self.delegate tookStep];
+	
+	[NSThread sleepForTimeInterval:ALGORITHM_WAITING_INTERVAL];
 }
 
 @end
