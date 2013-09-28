@@ -8,17 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, CellState) {
-	CellStateWall,
-	CellStatePath,
-	CellStateStart,
-	CellStateGoal
-};
-
 @interface Cell : NSObject
 
 @property NSUInteger state;
 @property CGPoint coordinate;
+@property BOOL visited;
 
 - (id)initWithState:(NSUInteger)state coordinate:(CGPoint)coordinate;
 
