@@ -37,32 +37,26 @@
 	CGFloat height = [self.dataSource height];
 	CGFloat width = [self.dataSource width];
 	
-	CGFloat boardWidth;
 	CGFloat boardHeight;
+	CGFloat boardWidth;
 	
-	CGFloat cellWidth;
-	CGFloat cellHeight;
+	CGFloat cellSize;
 	
-	CGFloat widthMultiplier;
-	CGFloat heightMultiplier;
+	if (numberOfCols >= numberOfRows) {
+		cellSize = floor(width / numberOfCols);
+	}
 	
-	cellWidth = floor(width / numberOfCols);
-	cellHeight = floor(height / numberOfRows);
-	
-	widthMultiplier = numberOfCols;
-	heightMultiplier = numberOfRows;
+	else {
+		cellSize = floor(height / numberOfRows);
+	}
 
 	
-	if ((NSInteger)cellWidth % 2) {
-		cellWidth -= 1;
+	if ((NSInteger)cellSize % 2) {
+		cellSize -= 1;
 	}
 	
-	if ((NSInteger)cellHeight % 2) {
-		cellHeight -= 1;
-	}
-	
-	boardWidth = cellWidth * widthMultiplier;
-	boardHeight = cellHeight * heightMultiplier;
+	boardWidth = cellSize * numberOfCols;
+	boardHeight = cellSize * numberOfRows;
 	
 	NSUInteger horizontalMargin = [self.dataSource horizontalMarginForBoardWidth:boardWidth];
 	NSUInteger verticalMargin = [self.dataSource verticalMarginForBoardHeight:boardHeight];
@@ -88,7 +82,7 @@
 				CGContextSetRGBFillColor(context, 0.0, 0.0, 1.0, 1.0);
 			}
 			
-			CGRect rectangle = CGRectMake(horizontalMargin + col * cellWidth, verticalMargin + row * cellHeight, cellWidth, cellHeight);
+			CGRect rectangle = CGRectMake(horizontalMargin + col*cellSize, verticalMargin + row*cellSize, cellSize, cellSize);
 			CGContextFillRect(context, rectangle);
 		}
 	}
