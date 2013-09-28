@@ -9,13 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "MazeViewDataSource.h"
 
-typedef NS_ENUM(NSUInteger, MazeViewCellState) {
-	MazeViewCellStateWall,
-	MazeViewCellStatePath,
-	MazeViewCellStateStart,
-	MazeViewCellStateGoal
-};
-
 @interface MazeView : UIView
 
 @property (nonatomic, weak) id <MazeViewDataSource> dataSource;
