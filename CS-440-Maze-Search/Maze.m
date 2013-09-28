@@ -8,6 +8,7 @@
 
 #import "Maze.h"
 #import "Cell.h"
+#import "CellState.h"
 
 @implementation Maze
 
@@ -26,7 +27,7 @@
 	return self;
 }
 
-- (NSArray *)childCellsForParent:(Cell *)cell {
+- (NSArray *)childrenForParent:(Cell *)cell {
 	NSMutableArray *children = [NSMutableArray array];
 	
 	// add children in the following order: left, up, right, down
@@ -47,7 +48,7 @@
 	for (NSValue *coordinateValue in potentialChildCoordinates) {
 		Cell *child = [self cellForCoordinate:coordinateValue.CGPointValue];
 		
-		if (child) {
+		if (child && (child.state == CellStatePath || child.state == CellStateStart || child.state == CellStateGoal)) {
 			[children addObject:child];
 		}
 	}
@@ -57,9 +58,17 @@
 
 - (Cell *)cellForCoordinate:(CGPoint)coordinate {
 	Cell *cell;
+
+	// if cell coordinate is within the border of the maze and is a path state, then return it, otherwise return nil
 	
-#warning TODO: check cell coordinate
-	// if cell coordinate is within the border of the maze, then return it, otherwise return nil
+	if (coordinate.x >= 0 && coordinate.y >= 0) {
+		NSUInteger row = coordinate.y;
+		NSUInteger col = coordinate.x;
+		NSUInteger numCols = _width.integerValue;
+		
+		NSUInteger offset = row*numCols + col;
+		cell = _cells[offset];
+	}
 	
 	return cell;
 }

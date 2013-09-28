@@ -20,6 +20,6 @@
 @property (readonly) Cell *goalCell;
 
 - (id)initWithName:(NSString *)name cells:(NSArray *)cells width:(NSNumber *)width height:(NSNumber *)height startingCell:(Cell *)startingCell goalCell:(Cell *)goalCell;
-- (NSArray *)childCellsForParent:(Cell *)cell;
+- (NSArray *)childrenForParent:(Cell *)cell;
 
 @end
