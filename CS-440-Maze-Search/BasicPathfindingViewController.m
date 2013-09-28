@@ -10,6 +10,7 @@
 #import "MazeManager.h"
 #import "MazeAndAlgorithmListViewController.h"
 #import "Maze.h"
+#import "Cell.h"
 #import "MazeView.h"
 #import "Solver.h"
 #import "SearchAlgorithmOperationFactory.h"
@@ -209,7 +210,9 @@
 		NSUInteger numCols = maze.width.integerValue;
 		NSUInteger offset = row*numCols + col;
 		
-		state = [maze.cells[offset] integerValue];
+		Cell *cell = maze.cells[offset];
+		
+		state = cell.state;
 	}
 	
 	return state;
