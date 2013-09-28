@@ -7,7 +7,8 @@
 //
 
 #import "BreadthFirstSearchOperation.h"
-#import "Queue.h"
+#import "Frontier.h"
+#import "CellState.h"
 
 @implementation BreadthFirstSearchOperation
 
@@ -23,33 +24,47 @@
 	Cell *startingCell = self.maze.startingCell;
 	Cell *goalCell = self.maze.goalCell;
 	
-	NSUInteger startingCol = startingCell.coordinate.x;
-	NSUInteger startingRow = startingCell.coordinate.y;
-	
-	NSUInteger goalCol = goalCell.coordinate.x;
-	NSUInteger goalRow = goalCell.coordinate.y;
-	
 	if (startingCell == goalCell) {
-		// goal has been reached
+		// goal reached
+		return;
 	}
 	
-	Queue *frontier = [[Queue alloc] init];
-	NSMutableDictionary *explored = [NSMutableDictionary dictionary];
+	Frontier *frontier = [[Frontier alloc] init];
+	NSMutableSet *explored = [NSMutableSet set];
 	
 	// add the starting cell to the frontier
 	[frontier enqueue:startingCell];
 	
-	// if empty, return failure
-	if (!frontier.count) {
-		// failure
+	while (frontier.count) {
+		// bfs uses a queue
+		// choose the shallowest cell in the frontier
+		Cell *cell = [frontier dequeueFirstObject];
+		
+		// add cell to explored
+		[explored addObject:cell];
+		[cell setVisited:YES];
+		
+		BOOL goalReached = [cell isEqual:goalCell];
+		
+		[self.delegate tookStep];
+		
+		if (goalReached) {
+			return;
+		}
+		
+		// look at the child cells
+		NSArray *children = [self.maze childrenForParent:cell];
+			
+		for (Cell *child in children) {
+			// if not in explored or frontier
+			if (![explored containsObject:child] && ![frontier containsObject:child]) {
+				[frontier enqueue:child];
+			}
+		}
 	}
 	
-	// choose the shallowest cell in the frontier
-	Cell *cell = [frontier dequeue];
-	
-	// add cell to explored
-	[explored setObject:cell forKey:[NSNumber numberWithInteger:cell.hash]];
-	
+	// frontier is empty, no goal found, return failure
+	return;
 }
 
 @end
