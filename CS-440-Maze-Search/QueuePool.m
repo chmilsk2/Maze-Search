@@ -55,11 +55,11 @@
 		NSOperationQueue *operationQueue = (NSOperationQueue *)object;
 		
 		if ([operationQueue.name isEqualToString:MAZE_PARSING_OPERATION_QUEUE_NAME]) {
-			NSLog(@"operations in %@: %d", MAZE_PARSING_OPERATION_QUEUE_NAME, [self.mazeParsingOperationQueue operationCount]);
+			NSLog(@"operations in %@: %lu", MAZE_PARSING_OPERATION_QUEUE_NAME, [self.mazeParsingOperationQueue operationCount]);
 		}
 		
 		else if ([operationQueue.name isEqualToString:ALGORITHM_OPERATION_QUEUE_NAME]) {
-			NSLog(@"operations in %@: %d", ALGORITHM_OPERATION_QUEUE_NAME, [self.algorithmOperationQueue operationCount]);
+			NSLog(@"operations in %@: %lu", ALGORITHM_OPERATION_QUEUE_NAME, (unsigned long)[self.algorithmOperationQueue operationCount]);
 		}
 	}
 }
