@@ -98,6 +98,7 @@
 
 - (void)start {
 	Solver *solver = [[Solver alloc] init];
+	[solver setDelegate:self];
 	
 	SearchAlgorithmOperationFactory *searchAlgorithmOperationFactory = [SearchAlgorithmOperationFactory searchAlgorithmOperationFactory];
 	
@@ -216,6 +217,25 @@
 	}
 	
 	return state;
+}
+
+- (BOOL)isVisitedForRow:(NSUInteger)row col:(NSUInteger)col {
+	BOOL isVisited = NO;
+	
+	Maze *maze = [[MazeManager sharedMazeManager] mazeAtIndex:_selectedMazeIndex];
+	
+	if (maze) {
+		// row major order offset
+		// offset = row*NUMCOLS + column
+		NSUInteger numCols = maze.width.integerValue;
+		NSUInteger offset = row*numCols + col;
+		
+		Cell *cell = maze.cells[offset];
+		
+		isVisited = cell.visited;
+	}
+	
+	return isVisited;
 }
 
 - (void)didReceiveMemoryWarning

@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "MazeAndAlgorithmListDelegate.h"
 #import "MazeViewDataSource.h"
+#import "SolverDelegate.h"
 
-@interface BasicPathfindingViewController : UIViewController <MazeAndAlgorithmListDelegate, MazeViewDataSource>
+@interface BasicPathfindingViewController : UIViewController <MazeAndAlgorithmListDelegate, MazeViewDataSource, SolverDelegate>
 
 @end
