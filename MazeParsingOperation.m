@@ -9,6 +9,7 @@
 #import "MazeParsingOperation.h"
 #import "Maze.h"
 #import "Cell.h"
+#import "CellState.h"
 
 @interface MazeParsingOperation ()
 
@@ -61,6 +62,9 @@
 	Cell *startingCell;
 	Cell *goalCell;
 	
+	BOOL isStartingCell = NO;
+	BOOL isGoalCell = NO;
+	
 	for (NSInteger row = 0; row < height.integerValue; row++) {
 		for (NSInteger col = 0; col < width.integerValue; col++) {
 			offset = row*numCols + col;
@@ -83,16 +87,28 @@
 			// starting position
 			else if (character == 'P') {
 				cellState = [NSNumber numberWithInteger:CellStateStart];
+				isStartingCell = YES;
 			}
 			
 			// goal
 			else if (character == '.') {
 				cellState = [NSNumber numberWithInteger:CellStateGoal];
+				isGoalCell = YES;
 			}
 			
 			CGPoint coordinate = CGPointMake(col, row);
 			Cell *cell = [[Cell alloc] initWithState:[cellState unsignedIntegerValue] coordinate:coordinate];
 			cells[offset] = cell;
+			
+			if (isStartingCell) {
+				isStartingCell = NO;
+				startingCell = cell;
+			}
+			
+			if (isGoalCell) {
+				isGoalCell = NO;
+				goalCell = cell;
+			}
 		}
 	}
 	
