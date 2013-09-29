@@ -30,7 +30,7 @@
 - (NSArray *)childrenForParent:(Cell *)cell {
 	NSMutableArray *children = [NSMutableArray array];
 	
-	// add children in the following order: left, up, right, down
+	// add children in the following order: right, down, left, up
 	
 	CGPoint parentCoordinate = cell.coordinate;
 	CGPoint leftChildCoordinate = CGPointMake(parentCoordinate.x - 1, parentCoordinate.y);
@@ -43,7 +43,7 @@
 	NSValue *rightChildCoordinateValue = [NSValue valueWithCGPoint:rightChildCoordinate];
 	NSValue *downChildCoordinateValue = [NSValue valueWithCGPoint:downChildCoordinate];
 	
-	NSArray *potentialChildCoordinates = @[leftChildCoordinateValue, upChildCoordinateValue, rightChildCoordinateValue, downChildCoordinateValue];
+	NSArray *potentialChildCoordinates = @[rightChildCoordinateValue, downChildCoordinateValue, leftChildCoordinateValue, upChildCoordinateValue];
 	
 	for (NSValue *coordinateValue in potentialChildCoordinates) {
 		Cell *child = [self cellForCoordinate:coordinateValue.CGPointValue];
