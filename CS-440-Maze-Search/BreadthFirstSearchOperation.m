@@ -12,9 +12,7 @@
 
 @implementation BreadthFirstSearchOperation
 
-- (void)main {
-	NSLog(@"perform breadth first search here");
-	
+- (void)main {	
 	[self breadthFirstSearch];
 	
 	[self didFinish];
