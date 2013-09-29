@@ -23,16 +23,13 @@
 		055246A517F0A92500D90397 /* mediumMaze.txt in Resources */ = {isa = PBXBuildFile; fileRef = 055246A117F0A92500D90397 /* mediumMaze.txt */; };
 		055246A617F0A92500D90397 /* bigMaze.txt in Resources */ = {isa = PBXBuildFile; fileRef = 055246A217F0A92500D90397 /* bigMaze.txt */; };
 		055246A717F0A92500D90397 /* openMaze.txt in Resources */ = {isa = PBXBuildFile; fileRef = 055246A317F0A92500D90397 /* openMaze.txt */; };
-		055246BA17F0ADEF00D90397 /* BasicPathfindingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246B917F0ADEF00D90397 /* BasicPathfindingViewController.m */; };
-		055246BD17F0ADFE00D90397 /* SearchWithDifferentCostFunctionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246BC17F0ADFE00D90397 /* SearchWithDifferentCostFunctionsViewController.m */; };
-		055246C017F0AE0C00D90397 /* SearchWithMultipleDotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246BF17F0AE0C00D90397 /* SearchWithMultipleDotsViewController.m */; };
-		055246C317F0AE1D00D90397 /* SuboptimalSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246C217F0AE1D00D90397 /* SuboptimalSearchViewController.m */; };
+		055246BA17F0ADEF00D90397 /* MazeSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246B917F0ADEF00D90397 /* MazeSearchViewController.m */; };
 		055246CA17F0CCBF00D90397 /* MazeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246C917F0CCBF00D90397 /* MazeManager.m */; };
 		055246CD17F0CDAF00D90397 /* Maze.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246CC17F0CDAF00D90397 /* Maze.m */; };
 		055246D317F0CEDA00D90397 /* QueuePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246D217F0CEDA00D90397 /* QueuePool.m */; };
 		055246D617F0DCDC00D90397 /* MazeParsingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246D517F0DCDC00D90397 /* MazeParsingOperation.m */; };
 		055246D917F1180B00D90397 /* SupportedMazes.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246D817F1180B00D90397 /* SupportedMazes.m */; };
-		055246E117F23DAC00D90397 /* MazeAndAlgorithmListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246E017F23DAC00D90397 /* MazeAndAlgorithmListViewController.m */; };
+		055246E117F23DAC00D90397 /* MazeSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246E017F23DAC00D90397 /* MazeSettingsViewController.m */; };
 		055246E717F24DF800D90397 /* MazeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246E617F24DF800D90397 /* MazeView.m */; };
 		055246F217F2798C00D90397 /* SupportedAlgorithms.m in Sources */ = {isa = PBXBuildFile; fileRef = 055246F117F2798C00D90397 /* SupportedAlgorithms.m */; };
 		05A8A52117F3A0740011AD25 /* Solver.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A8A52017F3A0740011AD25 /* Solver.m */; };
@@ -42,6 +39,9 @@
 		05A8A53017F3AD320011AD25 /* SearchAlgorithmOperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A8A52F17F3AD320011AD25 /* SearchAlgorithmOperationFactory.m */; };
 		05A8A53617F3CF5D0011AD25 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A8A53517F3CF5D0011AD25 /* Cell.m */; };
 		05A8A53A17F3D1DE0011AD25 /* Frontier.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A8A53917F3D1DE0011AD25 /* Frontier.m */; };
+		05E7BD2217F79FF400030AB1 /* GreedyBestFirstSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E7BD2117F79FF400030AB1 /* GreedyBestFirstSearch.m */; };
+		05E7BD3217F7C5E700030AB1 /* CostFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E7BD3117F7C5E700030AB1 /* CostFunctions.m */; };
+		05E7BD3817F7CEA900030AB1 /* AStarSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E7BD3717F7CEA900030AB1 /* AStarSearchOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,14 +75,8 @@
 		055246A117F0A92500D90397 /* mediumMaze.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mediumMaze.txt; sourceTree = "<group>"; };
 		055246A217F0A92500D90397 /* bigMaze.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bigMaze.txt; sourceTree = "<group>"; };
 		055246A317F0A92500D90397 /* openMaze.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = openMaze.txt; sourceTree = "<group>"; };
-		055246B817F0ADEF00D90397 /* BasicPathfindingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicPathfindingViewController.h; sourceTree = "<group>"; };
-		055246B917F0ADEF00D90397 /* BasicPathfindingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicPathfindingViewController.m; sourceTree = "<group>"; };
-		055246BB17F0ADFE00D90397 /* SearchWithDifferentCostFunctionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchWithDifferentCostFunctionsViewController.h; sourceTree = "<group>"; };
-		055246BC17F0ADFE00D90397 /* SearchWithDifferentCostFunctionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchWithDifferentCostFunctionsViewController.m; sourceTree = "<group>"; };
-		055246BE17F0AE0C00D90397 /* SearchWithMultipleDotsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchWithMultipleDotsViewController.h; sourceTree = "<group>"; };
-		055246BF17F0AE0C00D90397 /* SearchWithMultipleDotsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchWithMultipleDotsViewController.m; sourceTree = "<group>"; };
-		055246C117F0AE1D00D90397 /* SuboptimalSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuboptimalSearchViewController.h; sourceTree = "<group>"; };
-		055246C217F0AE1D00D90397 /* SuboptimalSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuboptimalSearchViewController.m; sourceTree = "<group>"; };
+		055246B817F0ADEF00D90397 /* MazeSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MazeSearchViewController.h; sourceTree = "<group>"; };
+		055246B917F0ADEF00D90397 /* MazeSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MazeSearchViewController.m; sourceTree = "<group>"; };
 		055246C817F0CCBF00D90397 /* MazeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MazeManager.h; sourceTree = "<group>"; };
 		055246C917F0CCBF00D90397 /* MazeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MazeManager.m; sourceTree = "<group>"; };
 		055246CB17F0CDAF00D90397 /* Maze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maze.h; sourceTree = "<group>"; };
@@ -93,14 +87,14 @@
 		055246D517F0DCDC00D90397 /* MazeParsingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MazeParsingOperation.m; path = ../MazeParsingOperation.m; sourceTree = "<group>"; };
 		055246D717F1180B00D90397 /* SupportedMazes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportedMazes.h; sourceTree = "<group>"; };
 		055246D817F1180B00D90397 /* SupportedMazes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportedMazes.m; sourceTree = "<group>"; };
-		055246DF17F23DAC00D90397 /* MazeAndAlgorithmListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MazeAndAlgorithmListViewController.h; sourceTree = "<group>"; };
-		055246E017F23DAC00D90397 /* MazeAndAlgorithmListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MazeAndAlgorithmListViewController.m; sourceTree = "<group>"; };
+		055246DF17F23DAC00D90397 /* MazeSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MazeSettingsViewController.h; sourceTree = "<group>"; };
+		055246E017F23DAC00D90397 /* MazeSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MazeSettingsViewController.m; sourceTree = "<group>"; };
 		055246E517F24DF800D90397 /* MazeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MazeView.h; sourceTree = "<group>"; };
 		055246E617F24DF800D90397 /* MazeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MazeView.m; sourceTree = "<group>"; };
 		055246E817F26CDD00D90397 /* MazeViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MazeViewDataSource.h; sourceTree = "<group>"; };
 		055246F017F2798C00D90397 /* SupportedAlgorithms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportedAlgorithms.h; sourceTree = "<group>"; };
 		055246F117F2798C00D90397 /* SupportedAlgorithms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportedAlgorithms.m; sourceTree = "<group>"; };
-		055246F317F280FA00D90397 /* MazeAndAlgorithmListDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MazeAndAlgorithmListDelegate.h; sourceTree = "<group>"; };
+		055246F317F280FA00D90397 /* MazeSettingsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MazeSettingsDelegate.h; sourceTree = "<group>"; };
 		05A8A51717F39FD70011AD25 /* SolverDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolverDelegate.h; sourceTree = "<group>"; };
 		05A8A51F17F3A0740011AD25 /* Solver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Solver.h; sourceTree = "<group>"; };
 		05A8A52017F3A0740011AD25 /* Solver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Solver.m; sourceTree = "<group>"; };
@@ -120,6 +114,15 @@
 		05A8A53817F3D1DE0011AD25 /* Frontier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Frontier.h; sourceTree = "<group>"; };
 		05A8A53917F3D1DE0011AD25 /* Frontier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Frontier.m; sourceTree = "<group>"; };
 		05C4B6ED17F72C4F008832D1 /* CellState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellState.h; sourceTree = "<group>"; };
+		05E7BD2017F79FF400030AB1 /* GreedyBestFirstSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreedyBestFirstSearch.h; sourceTree = "<group>"; };
+		05E7BD2117F79FF400030AB1 /* GreedyBestFirstSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreedyBestFirstSearch.m; sourceTree = "<group>"; };
+		05E7BD3017F7C5E700030AB1 /* CostFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CostFunctions.h; sourceTree = "<group>"; };
+		05E7BD3117F7C5E700030AB1 /* CostFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CostFunctions.m; sourceTree = "<group>"; };
+		05E7BD3317F7CCCC00030AB1 /* CostFunctionBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CostFunctionBlock.h; sourceTree = "<group>"; };
+		05E7BD3617F7CEA900030AB1 /* AStarSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStarSearchOperation.h; sourceTree = "<group>"; };
+		05E7BD3717F7CEA900030AB1 /* AStarSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AStarSearchOperation.m; sourceTree = "<group>"; };
+		05E7BD3917F7E77800030AB1 /* SupportedAlgorithmNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportedAlgorithmNames.h; sourceTree = "<group>"; };
+		05E7BD3C17F7E86300030AB1 /* CostFunctionNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CostFunctionNames.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				055246C517F0CC4100D90397 /* Controller */,
-				055246DA17F23D4E00D90397 /* Maze and Algorithm List */,
+				055246DA17F23D4E00D90397 /* Settings */,
 				055246C717F0CC8400D90397 /* View */,
 				055246C617F0CC7C00D90397 /* Model */,
 				0552467F17F0A56900D90397 /* AppDelegate.h */,
@@ -232,49 +235,19 @@
 			name = Mazes;
 			sourceTree = "<group>";
 		};
-		055246A817F0AC8C00D90397 /* 1.1 Basic Pathfinding */ = {
+		055246A817F0AC8C00D90397 /* Maze Search View Controller  */ = {
 			isa = PBXGroup;
 			children = (
-				055246B817F0ADEF00D90397 /* BasicPathfindingViewController.h */,
-				055246B917F0ADEF00D90397 /* BasicPathfindingViewController.m */,
+				055246B817F0ADEF00D90397 /* MazeSearchViewController.h */,
+				055246B917F0ADEF00D90397 /* MazeSearchViewController.m */,
 			);
-			name = "1.1 Basic Pathfinding";
-			sourceTree = "<group>";
-		};
-		055246A917F0AC9900D90397 /* 1.2 Search with Different Cost Functions */ = {
-			isa = PBXGroup;
-			children = (
-				055246BB17F0ADFE00D90397 /* SearchWithDifferentCostFunctionsViewController.h */,
-				055246BC17F0ADFE00D90397 /* SearchWithDifferentCostFunctionsViewController.m */,
-			);
-			name = "1.2 Search with Different Cost Functions";
-			sourceTree = "<group>";
-		};
-		055246AA17F0ACBC00D90397 /* 1.3 Search with Multiple Dots */ = {
-			isa = PBXGroup;
-			children = (
-				055246BE17F0AE0C00D90397 /* SearchWithMultipleDotsViewController.h */,
-				055246BF17F0AE0C00D90397 /* SearchWithMultipleDotsViewController.m */,
-			);
-			name = "1.3 Search with Multiple Dots";
-			sourceTree = "<group>";
-		};
-		055246AB17F0ACCC00D90397 /* 1.4 Suboptimal Search */ = {
-			isa = PBXGroup;
-			children = (
-				055246C117F0AE1D00D90397 /* SuboptimalSearchViewController.h */,
-				055246C217F0AE1D00D90397 /* SuboptimalSearchViewController.m */,
-			);
-			name = "1.4 Suboptimal Search";
+			name = "Maze Search View Controller ";
 			sourceTree = "<group>";
 		};
 		055246C517F0CC4100D90397 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				055246A817F0AC8C00D90397 /* 1.1 Basic Pathfinding */,
-				055246A917F0AC9900D90397 /* 1.2 Search with Different Cost Functions */,
-				055246AA17F0ACBC00D90397 /* 1.3 Search with Multiple Dots */,
-				055246AB17F0ACCC00D90397 /* 1.4 Suboptimal Search */,
+				055246A817F0AC8C00D90397 /* Maze Search View Controller  */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -282,18 +255,11 @@
 		055246C617F0CC7C00D90397 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				05E7BD2817F7A52F00030AB1 /* Algorithms */,
+				05E7BD2717F7A4DB00030AB1 /* Cost Functions */,
 				05A8A53B17F3D1E40011AD25 /* Frontier */,
 				05A8A51F17F3A0740011AD25 /* Solver.h */,
 				05A8A52017F3A0740011AD25 /* Solver.m */,
-				05A8A52E17F3AD320011AD25 /* SearchAlgorithmOperationFactory.h */,
-				05A8A52F17F3AD320011AD25 /* SearchAlgorithmOperationFactory.m */,
-				05A8A52917F3A5010011AD25 /* SearchAlgorithmOperation.h */,
-				05A8A52C17F3A6310011AD25 /* SearchAlgorithmOperation_Protected.h */,
-				05A8A52A17F3A5010011AD25 /* SearchAlgorithmOperation.m */,
-				05A8A52217F3A2420011AD25 /* DepthFirstSearchOperation.h */,
-				05A8A52317F3A2420011AD25 /* DepthFirstSearchOperation.m */,
-				05A8A52517F3A2590011AD25 /* BreadthFirstSearchOperation.h */,
-				05A8A52617F3A2590011AD25 /* BreadthFirstSearchOperation.m */,
 				05A8A52817F3A2730011AD25 /* AlgorithmOperation.h */,
 				05A8A52D17F3AB240011AD25 /* AlgorithmOperationDelegate.h */,
 				05A8A51717F39FD70011AD25 /* SolverDelegate.h */,
@@ -303,7 +269,7 @@
 				05A8A51C17F3A01D0011AD25 /* Maze Parsing */,
 				05A8A51E17F3A0480011AD25 /* Queue Pool */,
 				055246F517F284C900D90397 /* Maze View Data Source */,
-				055246F417F2810000D90397 /* Maze and Algorithm List Delegate */,
+				055246F417F2810000D90397 /* Maze Settings Delegate */,
 				055246EF17F2763D00D90397 /* Supported Algorithms */,
 				055246EE17F2763400D90397 /* Supported Mazes */,
 			);
@@ -319,13 +285,13 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		055246DA17F23D4E00D90397 /* Maze and Algorithm List */ = {
+		055246DA17F23D4E00D90397 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				055246DF17F23DAC00D90397 /* MazeAndAlgorithmListViewController.h */,
-				055246E017F23DAC00D90397 /* MazeAndAlgorithmListViewController.m */,
+				055246DF17F23DAC00D90397 /* MazeSettingsViewController.h */,
+				055246E017F23DAC00D90397 /* MazeSettingsViewController.m */,
 			);
-			name = "Maze and Algorithm List";
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		055246EE17F2763400D90397 /* Supported Mazes */ = {
@@ -342,16 +308,17 @@
 			children = (
 				055246F017F2798C00D90397 /* SupportedAlgorithms.h */,
 				055246F117F2798C00D90397 /* SupportedAlgorithms.m */,
+				05E7BD3917F7E77800030AB1 /* SupportedAlgorithmNames.h */,
 			);
 			name = "Supported Algorithms";
 			sourceTree = "<group>";
 		};
-		055246F417F2810000D90397 /* Maze and Algorithm List Delegate */ = {
+		055246F417F2810000D90397 /* Maze Settings Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				055246F317F280FA00D90397 /* MazeAndAlgorithmListDelegate.h */,
+				055246F317F280FA00D90397 /* MazeSettingsDelegate.h */,
 			);
-			name = "Maze and Algorithm List Delegate";
+			name = "Maze Settings Delegate";
 			sourceTree = "<group>";
 		};
 		055246F517F284C900D90397 /* Maze View Data Source */ = {
@@ -415,6 +382,37 @@
 				05A8A53917F3D1DE0011AD25 /* Frontier.m */,
 			);
 			name = Frontier;
+			sourceTree = "<group>";
+		};
+		05E7BD2717F7A4DB00030AB1 /* Cost Functions */ = {
+			isa = PBXGroup;
+			children = (
+				05E7BD3017F7C5E700030AB1 /* CostFunctions.h */,
+				05E7BD3117F7C5E700030AB1 /* CostFunctions.m */,
+				05E7BD3317F7CCCC00030AB1 /* CostFunctionBlock.h */,
+				05E7BD3C17F7E86300030AB1 /* CostFunctionNames.h */,
+			);
+			name = "Cost Functions";
+			sourceTree = "<group>";
+		};
+		05E7BD2817F7A52F00030AB1 /* Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				05A8A52E17F3AD320011AD25 /* SearchAlgorithmOperationFactory.h */,
+				05A8A52F17F3AD320011AD25 /* SearchAlgorithmOperationFactory.m */,
+				05A8A52917F3A5010011AD25 /* SearchAlgorithmOperation.h */,
+				05A8A52C17F3A6310011AD25 /* SearchAlgorithmOperation_Protected.h */,
+				05A8A52A17F3A5010011AD25 /* SearchAlgorithmOperation.m */,
+				05A8A52217F3A2420011AD25 /* DepthFirstSearchOperation.h */,
+				05A8A52317F3A2420011AD25 /* DepthFirstSearchOperation.m */,
+				05A8A52517F3A2590011AD25 /* BreadthFirstSearchOperation.h */,
+				05A8A52617F3A2590011AD25 /* BreadthFirstSearchOperation.m */,
+				05E7BD2017F79FF400030AB1 /* GreedyBestFirstSearch.h */,
+				05E7BD2117F79FF400030AB1 /* GreedyBestFirstSearch.m */,
+				05E7BD3617F7CEA900030AB1 /* AStarSearchOperation.h */,
+				05E7BD3717F7CEA900030AB1 /* AStarSearchOperation.m */,
+			);
+			name = Algorithms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -518,24 +516,24 @@
 			files = (
 				05A8A53A17F3D1DE0011AD25 /* Frontier.m in Sources */,
 				05A8A52417F3A2420011AD25 /* DepthFirstSearchOperation.m in Sources */,
-				055246BA17F0ADEF00D90397 /* BasicPathfindingViewController.m in Sources */,
-				055246C017F0AE0C00D90397 /* SearchWithMultipleDotsViewController.m in Sources */,
-				055246C317F0AE1D00D90397 /* SuboptimalSearchViewController.m in Sources */,
+				055246BA17F0ADEF00D90397 /* MazeSearchViewController.m in Sources */,
 				055246E717F24DF800D90397 /* MazeView.m in Sources */,
 				05A8A53617F3CF5D0011AD25 /* Cell.m in Sources */,
 				05A8A52117F3A0740011AD25 /* Solver.m in Sources */,
-				055246BD17F0ADFE00D90397 /* SearchWithDifferentCostFunctionsViewController.m in Sources */,
 				0552468117F0A56900D90397 /* AppDelegate.m in Sources */,
 				05A8A52717F3A2590011AD25 /* BreadthFirstSearchOperation.m in Sources */,
+				05E7BD3817F7CEA900030AB1 /* AStarSearchOperation.m in Sources */,
 				055246F217F2798C00D90397 /* SupportedAlgorithms.m in Sources */,
 				055246D617F0DCDC00D90397 /* MazeParsingOperation.m in Sources */,
 				055246D917F1180B00D90397 /* SupportedMazes.m in Sources */,
-				055246E117F23DAC00D90397 /* MazeAndAlgorithmListViewController.m in Sources */,
+				055246E117F23DAC00D90397 /* MazeSettingsViewController.m in Sources */,
 				055246CA17F0CCBF00D90397 /* MazeManager.m in Sources */,
 				055246CD17F0CDAF00D90397 /* Maze.m in Sources */,
 				05A8A52B17F3A5010011AD25 /* SearchAlgorithmOperation.m in Sources */,
+				05E7BD2217F79FF400030AB1 /* GreedyBestFirstSearch.m in Sources */,
 				055246D317F0CEDA00D90397 /* QueuePool.m in Sources */,
 				05A8A53017F3AD320011AD25 /* SearchAlgorithmOperationFactory.m in Sources */,
+				05E7BD3217F7C5E700030AB1 /* CostFunctions.m in Sources */,
 				0552467D17F0A56900D90397 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
