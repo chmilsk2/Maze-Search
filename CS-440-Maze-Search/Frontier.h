@@ -7,15 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CostFunctionBlock.h"
 
 @interface Frontier : NSObject
 
 @property (readonly) NSUInteger count;
 
-- (void)enqueue:(id)obj;
+- (void)enqueueObject:(id)obj;
 
 // Queue implementation (FIFO)
 - (id)dequeueFirstObject;
+
+// Priority Queue implementation (remove object with lowest cost)
+- (id)dequeueObjectWithLowestCostForBlock:(CostFunctionBlock)costFunction goalPoint:(CGPoint)goalPoint;
 
 // Stack implementation (FILO)
 - (id)dequeueLastObject;
