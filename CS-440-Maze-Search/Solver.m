@@ -10,7 +10,7 @@
 #import "QueuePool.h"
 #import "SearchAlgorithmOperation.h"
 
-#define ALGORITHM_WAITING_INTERVAL .1
+#define ALGORITHM_WAITING_INTERVAL .01
 
 @implementation Solver {
 	NSOperationQueue *_algorithmOperationQueue;
