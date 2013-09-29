@@ -21,6 +21,7 @@
 	// use a priority queue
 	
 	Cell *startingCell = self.maze.startingCell;
+	
 	Cell *goalCell = self.maze.goalCell;
 	
 	if ([startingCell isEqual:goalCell]) {
@@ -36,9 +37,10 @@
 	// add the starting cell to the frontier
 	[frontier enqueueObject:startingCell];
 	
+	self.maximumFrontierSize = frontier.count;
+	
 	while (frontier.count) {
-		// bfs uses a queue
-		// choose the shallowest cell in the frontier
+		// choose the cell with the lowest path cost
 		Cell *cell = [frontier dequeueObjectWithLowestCostForBlock:self.costFunctionBlock goalPoint:goalCell.coordinate];
 		
 		BOOL goalReached = [cell isEqual:goalCell];
@@ -47,11 +49,17 @@
 		[explored addObject:cell];
 		[cell setVisited:YES];
 		
-		[self.delegate tookStep];
+		// update the number of nodes expandned
+		self.numberOfNodesExpanded++;
 		
 		if (goalReached) {
+			self.pathCost = [self pathCostForGoalCell:goalCell];
+			[self.delegate tookStep];
+			
 			return;
 		}
+		
+		[self.delegate tookStep];
 		
 		// look at the child cells
 		NSArray *children = [self.maze childrenForParent:cell];
@@ -60,6 +68,20 @@
 			// if not in explored or frontier
 			if (![explored containsObject:child] && ![frontier containsObject:child]) {
 				[frontier enqueueObject:child];
+				// update the maximum frontier size
+				if (frontier.count > self.maximumFrontierSize) {
+					self.maximumFrontierSize = frontier.count;
+				}
+				
+				// set the child's parent
+				[child setParent:cell];
+			}
+			
+			// update the depth
+			[child setDepth:cell.depth + 1];
+			
+			if (child.depth > self.maximumTreeDepthSearched) {
+				self.maximumTreeDepthSearched = child.depth;
 			}
 		}
 	}
