@@ -7,6 +7,7 @@
 //
 
 #import "Frontier.h"
+#import "Cell.h"
 
 @implementation Frontier {
 	NSMutableOrderedSet *_frontier;
@@ -23,12 +24,14 @@
 	return self;
 }
 
-- (void)enqueue:(id)obj {
+#pragma mark - Queue/Stack Enqueue
+
+- (void)enqueueObject:(id)obj {
 	[_frontier addObject:obj];
 	_count = _frontier.count;
 }
 
-#pragma mark - Queue
+#pragma mark - Queue Dequeue
 
 - (id)dequeueFirstObject {
 	id obj;
@@ -44,7 +47,7 @@
 	return obj;
 }
 
-#pragma mark - Stack
+#pragma mark - Stack Dequeue
 
 - (id)dequeueLastObject {
 	id obj;
@@ -58,6 +61,26 @@
 	}
 	
 	return obj;
+}
+
+#pragma mark - Priority Queue Dequeue
+
+- (id)dequeueObjectWithLowestCostForBlock:(CostFunctionBlock)costFunction goalPoint:(CGPoint)goalPoint {
+	__block CGFloat lowestCost = CGFLOAT_MAX;
+	__block id lowestCostObj;
+
+	[_frontier enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+		CGFloat cost = costFunction(((Cell *)obj).coordinate, goalPoint);
+		
+		if (cost < lowestCost) {
+			lowestCost = cost;
+			lowestCostObj = obj;
+		}
+	}];
+	
+	[_frontier removeObject:lowestCostObj];
+	
+	return lowestCostObj;
 }
 
 - (void)clear {
