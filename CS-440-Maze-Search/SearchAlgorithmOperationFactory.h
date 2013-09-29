@@ -13,6 +13,6 @@
 @interface SearchAlgorithmOperationFactory : NSObject
 
 + (SearchAlgorithmOperationFactory *)searchAlgorithmOperationFactory;
-- (SearchAlgorithmOperation *)searchAlgorithmOperationForName:(NSString *)name;
+- (SearchAlgorithmOperation *)searchAlgorithmOperationForName:(NSString *)name costFunctionName:(NSString *)costFunctionName;
 
 @end

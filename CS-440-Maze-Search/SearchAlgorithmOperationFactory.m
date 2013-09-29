@@ -10,6 +10,10 @@
 #import "SearchAlgorithmOperation.h"
 #import "DepthFirstSearchOperation.h"
 #import "BreadthFirstSearchOperation.h"
+#import "GreedyBestFirstSearch.h"
+#import "AStarSearchOperation.h"
+#import "CostFunctions.h"
+#import "CostFunctionBlock.h"
 
 #define DEPTH_FIRST_SEARCH @"Depth-First Search"
 #define BREADTH_FIRST_SEARCH @"Breadth-First Search"
@@ -42,12 +46,14 @@
 	return self;
 }
 
-- (SearchAlgorithmOperation *)searchAlgorithmOperationForName:(NSString *)name {
+- (SearchAlgorithmOperation *)searchAlgorithmOperationForName:(NSString *)name costFunctionName:(NSString *)costFunctionName {
 	SearchAlgorithmOperation *algorithmOperation = [_algorithmOperationsDict objectForKey:[NSNumber numberWithInteger:[name hash]]];
 	
 	if (!algorithmOperation) {
+		CostFunctionBlock costFunctionBlock = [CostFunctions costFunctionForName:costFunctionName];
+		
 		if ([name isEqualToString:DEPTH_FIRST_SEARCH]) {
-			algorithmOperation = [[DepthFirstSearchOperation alloc] init];
+			algorithmOperation = [[DepthFirstSearchOperation alloc] initWithCostFunctionBlock:costFunctionBlock];
 		}
 		
 		else if ([name isEqualToString:BREADTH_FIRST_SEARCH]) {
@@ -55,11 +61,11 @@
 		}
 		
 		else if ([name isEqualToString:GREEDY_BEST_FIRST_SEARCH]) {
-
+			algorithmOperation = [[GreedyBestFirstSearch alloc] init];
 		}
 		
 		else if ([name isEqualToString:A_STAR_SEARCH]) {
-			
+			algorithmOperation = [[AStarSearchOperation alloc] init];
 		}
 	}
 		
