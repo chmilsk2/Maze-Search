@@ -12,11 +12,13 @@
 
 - (CGFloat)horizontalMarginForBoardWidth:(CGFloat)width;
 - (CGFloat)verticalMarginForBoardHeight:(CGFloat)height;
+- (CGFloat)verticalMarginForTopMostLabel;
 - (CGFloat)width;
 - (CGFloat)height;
 - (NSUInteger)numberOfCols;
 - (NSUInteger)numberOfRows;
 - (NSUInteger)stateForRow:(NSUInteger)row col:(NSUInteger)col;
 - (BOOL)isVisitedForRow:(NSUInteger)row col:(NSUInteger)col;
+- (BOOL)isOnSolutionPathForRow:(NSUInteger)row col:(NSUInteger)col;
 
 @end
