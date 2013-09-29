@@ -11,6 +11,16 @@
 
 @implementation SearchAlgorithmOperation
 
+- (id)initWithCostFunctionBlock:(CostFunctionBlock)costFunctionBlock {
+	self = [super init];
+	
+	if (self) {
+		_costFunctionBlock = costFunctionBlock;
+	}
+	
+	return self;
+}
+
 - (void)main {
 	// no-op
 }

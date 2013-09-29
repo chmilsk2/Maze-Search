@@ -11,8 +11,7 @@
 #import "AlgorithmOperationDelegate.h"
 #import "Maze.h"
 #import "Cell.h"
-
-@class Maze;
+#import "CostFunctionBlock.h"
 
 typedef void(^AlgorithmHandler)();
 
@@ -20,5 +19,7 @@ typedef void(^AlgorithmHandler)();
 
 @property id <AlgorithmOperationDelegate> delegate;
 @property (copy) AlgorithmHandler algorithmCompletionHandler;
+
+- (id)initWithCostFunctionBlock:(CostFunctionBlock)costFunctionBlock;
 
 @end
