@@ -30,8 +30,12 @@
 	[searchAlgorithmOperation setDelegate:self];
 	[searchAlgorithmOperation setMaze:maze];
 	
-	searchAlgorithmOperation.algorithmCompletionHandler = ^() {
+	searchAlgorithmOperation.algorithmCompletionHandler = ^(NSUInteger pathCost, NSUInteger numberOfNodesExpanded, NSUInteger maximumTreeDepthSearched, NSUInteger maximumFrontierSize) {
 		NSLog(@"finished search algorithm operation");
+		
+		if (self.solverCompletionHandler) {
+			self.solverCompletionHandler(pathCost, numberOfNodesExpanded, maximumTreeDepthSearched, maximumFrontierSize);
+		}
 	};
 	
 	[_algorithmOperationQueue addOperation:searchAlgorithmOperation];

@@ -10,11 +10,14 @@
 #import "SolverDelegate.h"
 #import "AlgorithmOperationDelegate.h"
 
+typedef void(^SolverHandler)(NSUInteger, NSUInteger, NSUInteger, NSUInteger);
+
 @class Maze, SearchAlgorithmOperation;
 
 @interface Solver : NSObject <AlgorithmOperationDelegate>
 
 @property (nonatomic, weak) id <SolverDelegate> delegate;
+@property (copy) SolverHandler solverCompletionHandler;
 
 - (void)solveWithMaze:(Maze *)maze algorithmOperation:(SearchAlgorithmOperation *)algorithmOperation;
 
