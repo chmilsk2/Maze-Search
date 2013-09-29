@@ -57,15 +57,15 @@
 		}
 		
 		else if ([name isEqualToString:BREADTH_FIRST_SEARCH]) {
-			algorithmOperation = [[BreadthFirstSearchOperation alloc] init];
+			algorithmOperation = [[BreadthFirstSearchOperation alloc] initWithCostFunctionBlock:costFunctionBlock];
 		}
 		
 		else if ([name isEqualToString:GREEDY_BEST_FIRST_SEARCH]) {
-			algorithmOperation = [[GreedyBestFirstSearch alloc] init];
+			algorithmOperation = [[GreedyBestFirstSearch alloc] initWithCostFunctionBlock:costFunctionBlock];
 		}
 		
 		else if ([name isEqualToString:A_STAR_SEARCH]) {
-			algorithmOperation = [[AStarSearchOperation alloc] init];
+			algorithmOperation = [[AStarSearchOperation alloc] initWithCostFunctionBlock:costFunctionBlock];
 		}
 	}
 		
