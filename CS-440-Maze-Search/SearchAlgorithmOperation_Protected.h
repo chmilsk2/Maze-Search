@@ -11,6 +11,7 @@
 @interface SearchAlgorithmOperation ()
 
 @property Maze *maze;
+@property (copy) CostFunctionBlock costFunctionBlock;
 
 - (void)didFinish;
 
