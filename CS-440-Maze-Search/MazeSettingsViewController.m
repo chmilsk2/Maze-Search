@@ -111,7 +111,7 @@
 	[self.navigationController dismissViewControllerAnimated:YES completion:nil];
 	
 	// notify delegate
-	[self.delegate didSelectMazeAtIndex:_selectedMazeIndex algorithmIndex:_selectedAlgorithmIndex];
+	[self.delegate didSelectMazeAtIndex:_selectedMazeIndex algorithmIndex:_selectedAlgorithmIndex costFunctionIndex:_selectedCostFunctionIndex];
 }
 
 - (void)didReceiveMemoryWarning
@@ -319,6 +319,11 @@
 		[self.tableView beginUpdates];
 		[self.tableView deleteRowsAtIndexPaths:indexPathsForCellsToRemove withRowAnimation:UITableViewRowAnimationNone];
 		[self.tableView endUpdates];
+	}
+	
+	else {
+		_costFunctionNamesForSelectedAlgorithm = newCostFunctions;
+		[self.tableView reloadData];
 	}
 }
 
