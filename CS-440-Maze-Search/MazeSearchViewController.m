@@ -133,12 +133,15 @@
 
 #pragma mark - Maze and Algorithm List Delegate
 
-- (void)didSelectMazeAtIndex:(NSUInteger)selectedMazeIndex algorithmIndex:(NSUInteger)selectedAlgorithmIndex {
+- (void)didSelectMazeAtIndex:(NSUInteger)selectedMazeIndex algorithmIndex:(NSUInteger)selectedAlgorithmIndex costFunctionIndex:(NSUInteger)selectedCostFunctionIndex {
 	// update the selected maze index
 	_selectedMazeIndex = selectedMazeIndex;
 	
 	// update the selected algorithm index
 	_selectedAlgorithmIndex = selectedAlgorithmIndex;
+	
+	// update the selected cost function index
+	_selectedCostFunctionIndex = selectedCostFunctionIndex;
 	
 	[self reloadMazeViewData];
 }
