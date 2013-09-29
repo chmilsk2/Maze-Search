@@ -12,9 +12,7 @@
 
 @implementation DepthFirstSearchOperation
 
-- (void)main {
-	NSLog(@"perform depth first search here");
-	
+- (void)main {	
 	[self depthFirstSearch];
 	
 	[self didFinish];
