@@ -55,7 +55,7 @@
 		NSOperationQueue *operationQueue = (NSOperationQueue *)object;
 		
 		if ([operationQueue.name isEqualToString:MAZE_PARSING_OPERATION_QUEUE_NAME]) {
-			NSLog(@"operations in %@: %lu", MAZE_PARSING_OPERATION_QUEUE_NAME, [self.mazeParsingOperationQueue operationCount]);
+			NSLog(@"operations in %@: %lu", MAZE_PARSING_OPERATION_QUEUE_NAME, (unsigned long)[self.mazeParsingOperationQueue operationCount]);
 		}
 		
 		else if ([operationQueue.name isEqualToString:ALGORITHM_OPERATION_QUEUE_NAME]) {
