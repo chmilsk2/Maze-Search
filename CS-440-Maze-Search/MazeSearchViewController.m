@@ -21,6 +21,11 @@
 
 #define PARSED_MAZE_NOTIFICATON @"Parsed Maze Notification"
 
+#define PATH_COST_LABEL_TEXT @"Path Cost:"
+#define NUMBER_OF_NODES_EXPANDED_TEXT @"Number of Nodes Expanded:"
+#define MAXIMUM_TREE_DEPTH_SEARCHED_TEXT @"Maximum Tree Depth:"
+#define MAXIMUM_FRONTIER_SIZE_TEXT @"Maximum Frontier Size:"
+
 @interface MazeSearchViewController ()
 
 @property (nonatomic, strong) MazeView *mazeView;
@@ -111,6 +116,18 @@
 	
 	SearchAlgorithmOperation *algorithmOperation = [searchAlgorithmOperationFactory searchAlgorithmOperationForName:algorithmOperationName costFunctionName:costFunctionName];
 	
+	solver.solverCompletionHandler = ^(NSUInteger pathCost, NSUInteger numberOfNodesExpanded, NSUInteger maximumTreeDepthSearched, NSUInteger maximumFrontierSize) {\
+		
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self.mazeView.pathCostLabel setText:[NSString stringWithFormat:@"%@ %lu", PATH_COST_LABEL_TEXT, (unsigned long)pathCost]];
+			[self.mazeView.numberOfNodesExpandedLabel setText:[NSString stringWithFormat:@"%@ %lu", NUMBER_OF_NODES_EXPANDED_TEXT, (unsigned long)numberOfNodesExpanded]];
+			[self.mazeView.maximumTreeDepthSearchedLabel setText:[NSString stringWithFormat:@"%@ %lu", MAXIMUM_TREE_DEPTH_SEARCHED_TEXT, (unsigned long)maximumTreeDepthSearched]];
+			[self.mazeView.maximumFrontierSizeLabel setText:[NSString stringWithFormat:@"%@ %lu", MAXIMUM_FRONTIER_SIZE_TEXT, (unsigned long)maximumFrontierSize]];
+			
+			[self.mazeView reloadData];
+		});
+	};
+	
 	[solver solveWithMaze:[[MazeManager sharedMazeManager] mazeAtIndex:_selectedMazeIndex] algorithmOperation:algorithmOperation];
 }
 
@@ -143,7 +160,14 @@
 	// update the selected cost function index
 	_selectedCostFunctionIndex = selectedCostFunctionIndex;
 	
-	[self reloadMazeViewData];
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[self.mazeView.pathCostLabel setText:[NSString stringWithFormat:@"%@", PATH_COST_LABEL_TEXT]];
+		[self.mazeView.numberOfNodesExpandedLabel setText:[NSString stringWithFormat:@"%@", NUMBER_OF_NODES_EXPANDED_TEXT]];
+		[self.mazeView.maximumTreeDepthSearchedLabel setText:[NSString stringWithFormat:@"%@", MAXIMUM_TREE_DEPTH_SEARCHED_TEXT]];
+		[self.mazeView.maximumFrontierSizeLabel setText:[NSString stringWithFormat:@"%@", MAXIMUM_FRONTIER_SIZE_TEXT]];
+		
+		[self.mazeView reloadData];
+	});
 }
 
 #pragma mark - Parsed Maze Notification
@@ -169,6 +193,13 @@
 	CGFloat verticalPadding = (self.view.bounds.size.height - boardHeight - statusBarHeight - navBarHeight)/2;
 	
 	return verticalPadding + navBarHeight + statusBarHeight;
+}
+
+- (CGFloat)verticalMarginForTopMostLabel {
+	CGFloat navBarHeight = self.navigationController.navigationBar.bounds.size.height;
+	CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+	
+	return navBarHeight + statusBarHeight;
 }
 
 - (CGFloat)horizontalMarginForBoardWidth:(CGFloat)boardWidth {
@@ -244,6 +275,29 @@
 	
 	return isVisited;
 }
+
+- (BOOL)isOnSolutionPathForRow:(NSUInteger)row col:(NSUInteger)col {
+	BOOL isOnSolutionPath = NO;
+	
+	Maze *maze = [[MazeManager sharedMazeManager] mazeAtIndex:_selectedMazeIndex];
+	
+	if (maze) {
+		// row major order offset
+		// offset = row*NUMCOLS + column
+		NSUInteger numCols = maze.width.integerValue;
+		NSUInteger offset = row*numCols + col;
+		
+		Cell *cell = maze.cells[offset];
+		
+		isOnSolutionPath = cell.isOnSolutionPath;
+	}
+	
+	return isOnSolutionPath;
+}
+
+#pragma mark - Statistics
+
+
 
 - (void)didReceiveMemoryWarning
 {
