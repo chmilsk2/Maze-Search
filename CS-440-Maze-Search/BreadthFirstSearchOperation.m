@@ -24,6 +24,8 @@
 	
 	if (startingCell == goalCell) {
 		// goal reached
+		[startingCell setVisited:YES];
+		[self.delegate tookStep];
 		return;
 	}
 	
