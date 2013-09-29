@@ -12,6 +12,10 @@
 @interface MazeView : UIView
 
 @property (nonatomic, weak) id <MazeViewDataSource> dataSource;
+@property (nonatomic, strong) UILabel *pathCostLabel;
+@property (nonatomic, strong) UILabel *numberOfNodesExpandedLabel;
+@property (nonatomic, strong) UILabel *maximumTreeDepthSearchedLabel;
+@property (nonatomic, strong) UILabel *maximumFrontierSizeLabel;
 
 - (void)reloadData;
 
