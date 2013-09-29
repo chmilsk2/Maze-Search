@@ -15,8 +15,9 @@
 #define PARSED_MAZE_NOTIFICATON @"Parsed Maze Notification"
 
 @implementation MazeManager {
+	NSMutableArray *_parsedMazeNames;
 	NSMutableArray *_processingMazeNames;
-	NSArray *_mazes;
+	NSMutableArray *_mazes;
 	NSInteger _parsedMazeCount;
 	NSOperationQueue *_mazeParsingQueue;
 }
@@ -39,8 +40,14 @@
 	if (self) {
 		_parsedMazeCount = 0;
 		
-		_mazes = [NSArray array];
+		_mazes = [NSMutableArray arrayWithCapacity:SupportedMazes().count];
+		
+		for (NSUInteger i = 0; i < SupportedMazes().count; i++) {
+			[_mazes addObject:[NSNull null]];
+		}
+
 		_processingMazeNames = [NSMutableArray array];
+		_parsedMazeNames = [NSMutableArray array];
 		
 		_mazeParsingQueue = [QueuePool sharedQueuePool].mazeParsingOperationQueue;
 	}
@@ -51,12 +58,17 @@
 - (Maze *)mazeAtIndex:(NSInteger)index {
 	Maze *maze;
 	
-	NSInteger maxIndex = _mazes.count - 1;
+	NSString *mazeName = [self fileNameForMazeAtIndex:index];
 	
-	// no maze exists at index, so parse the maze
-	if (index > maxIndex) {
-		NSString *mazeName = [self fileNameForMazeAtIndex:index];
-		
+	BOOL isParsed = NO;
+	
+	for (NSString *parsedMazeName in _parsedMazeNames) {
+		if ([parsedMazeName isEqualToString:mazeName]) {
+			isParsed = YES;
+		}
+	}
+	
+	if (!isParsed) {
 		BOOL isProcessing = [self isProcessingMazeWithFileName:mazeName];
 		
 		if (!isProcessing) {
@@ -92,6 +104,10 @@
 	[_processingMazeNames removeObject:mazeName];
 }
 
+- (void)addParsedMazeName:(NSString *)mazeName {
+	[_parsedMazeNames addObject:mazeName];
+}
+
 - (void)didBeginParsing {
 	NSLog(@"did begin parsing");
 }
@@ -118,13 +134,23 @@
 	mazeParsingOperation.mazeParsingCompletionHandler = ^(NSString *name, Maze *newMaze) {
 		_parsedMazeCount++;
 		
-		NSMutableArray *updatedMazes = [NSMutableArray arrayWithArray:_mazes];
-		[updatedMazes addObject:newMaze];
-		_mazes = [NSArray arrayWithArray:updatedMazes];
+		NSArray *supportedMazes = SupportedMazes();
 		
-		[self didFinishParsingMazeAtIndex:_mazes.count - 1];
+		NSUInteger index = 0;
+		
+		for (NSUInteger i = 0; i < supportedMazes.count; i++) {
+			if ([name isEqualToString:supportedMazes[i]]) {
+				index = i;
+				break;
+			}
+		}
+		
+		[_mazes replaceObjectAtIndex:index withObject:newMaze];
+	
 		NSLog(@"finished parsing maze #%ld: %@", (long)_parsedMazeCount, name);
 		[self removeProcessingMazeName:mazeName];
+		[self addParsedMazeName:mazeName];
+		[self didFinishParsingMazeAtIndex:index];
 	};
 	
 	[_mazeParsingQueue addOperation:mazeParsingOperation];
