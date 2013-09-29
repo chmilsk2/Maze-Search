@@ -22,7 +22,7 @@
 	Cell *startingCell = self.maze.startingCell;
 	Cell *goalCell = self.maze.goalCell;
 	
-	if (startingCell == goalCell) {
+	if ([startingCell isEqual:goalCell]) {
 		// goal reached
 		[startingCell setVisited:YES];
 		[self.delegate tookStep];
