@@ -13,6 +13,10 @@
 @property NSUInteger state;
 @property CGPoint coordinate;
 @property BOOL visited;
+@property BOOL isOnSolutionPath;
+
+@property NSUInteger depth;
+@property Cell *parent;
 
 - (id)initWithState:(NSUInteger)state coordinate:(CGPoint)coordinate;
 

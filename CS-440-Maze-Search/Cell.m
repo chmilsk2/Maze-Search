@@ -17,6 +17,9 @@
 		_state = state;
 		_coordinate = coordinate;
 		_visited = NO;
+		_isOnSolutionPath = NO;
+		_parent = nil;
+		_depth = 0;
 	}
 	
 	return self;
