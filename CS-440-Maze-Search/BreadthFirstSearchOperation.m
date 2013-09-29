@@ -31,7 +31,7 @@
 	NSMutableSet *explored = [NSMutableSet set];
 	
 	// add the starting cell to the frontier
-	[frontier enqueue:startingCell];
+	[frontier enqueueObject:startingCell];
 	
 	while (frontier.count) {
 		// bfs uses a queue
@@ -56,7 +56,7 @@
 		for (Cell *child in children) {
 			// if not in explored or frontier
 			if (![explored containsObject:child] && ![frontier containsObject:child]) {
-				[frontier enqueue:child];
+				[frontier enqueueObject:child];
 			}
 		}
 	}
