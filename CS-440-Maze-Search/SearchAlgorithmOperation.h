@@ -13,12 +13,17 @@
 #import "Cell.h"
 #import "CostFunctionBlock.h"
 
-typedef void(^AlgorithmHandler)();
+typedef void(^AlgorithmHandler)(NSUInteger, NSUInteger, NSUInteger, NSUInteger);
 
 @interface SearchAlgorithmOperation : NSOperation <AlgorithmOperation>
 
 @property id <AlgorithmOperationDelegate> delegate;
 @property (copy) AlgorithmHandler algorithmCompletionHandler;
+
+@property NSUInteger pathCost;
+@property NSUInteger numberOfNodesExpanded;
+@property NSUInteger maximumTreeDepthSearched;
+@property NSUInteger maximumFrontierSize;
 
 - (id)initWithCostFunctionBlock:(CostFunctionBlock)costFunctionBlock;
 
