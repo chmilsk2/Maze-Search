@@ -11,3 +11,7 @@
 NSArray * SupportedMazes() {
 	return @[@"smallMaze", @"mediumMaze", @"bigMaze", @"openMaze"];
 }
+
+NSArray * SupportedMazeNames() {
+	return @[@"Small Maze", @"Medium Maze", @"Big Maze", @"Open Maze"];
+}

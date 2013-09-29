@@ -7,3 +7,4 @@
 //
 
 NSArray * SupportedMazes();
+NSArray * SupportedMazeNames();
