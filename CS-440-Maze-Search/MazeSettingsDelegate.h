@@ -10,6 +10,6 @@
 
 @protocol MazeSettingsDelegate <NSObject>
 
-- (void)didSelectMazeAtIndex:(NSUInteger)selectedMazeIndex algorithmIndex:(NSUInteger)selectedAlgorithmIndex;
+- (void)didSelectMazeAtIndex:(NSUInteger)selectedMazeIndex algorithmIndex:(NSUInteger)selectedAlgorithmIndex costFunctionIndex:(NSUInteger)selectedCostFunctionIndex;
 
 @end
