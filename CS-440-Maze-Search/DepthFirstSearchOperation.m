@@ -22,8 +22,10 @@
 	Cell *startingCell = self.maze.startingCell;
 	Cell *goalCell = self.maze.goalCell;
 	
-	if (startingCell == goalCell) {
+	if ([startingCell isEqual:goalCell]) {
 		// goal reached
+		[startingCell setVisited:YES];
+		[self.delegate tookStep];
 		return;
 	}
 	
@@ -31,7 +33,7 @@
 	NSMutableSet *explored = [NSMutableSet set];
 	
 	// add the starting cell to the frontier
-	[frontier enqueue:startingCell];
+	[frontier enqueueObject:startingCell];
 	
 	while (frontier.count) {
 		// dfs uses a stack
@@ -56,7 +58,7 @@
 		for (Cell *child in children) {
 			// if not in explored or frontier
 			if (![explored containsObject:child] && ![frontier containsObject:child]) {
-				[frontier enqueue:child];
+				[frontier enqueueObject:child];
 			}
 		}
 	}
