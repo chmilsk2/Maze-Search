@@ -8,9 +8,8 @@
 
 #import "SearchAlgorithmOperationFactory.h"
 #import "SearchAlgorithmOperation.h"
-#import "DepthFirstSearchOperation.h"
-#import "BreadthFirstSearchOperation.h"
-#import "UniformCostSearch.h"
+#import "UninformedSearchOperation.h"
+#import "UniformCostSearchOperation.h"
 #import "CostFunctions.h"
 #import "CostFunctionBlock.h"
 #import "SupportedAlgorithmNames.h"
@@ -48,15 +47,15 @@
 		CostFunctionBlock costFunctionBlock = [CostFunctions costFunctionForName:costFunctionName];
 		
 		if ([name isEqualToString:DEPTH_FIRST_SEARCH]) {
-			algorithmOperation = [[DepthFirstSearchOperation alloc] initWithCostFunctionBlock:costFunctionBlock];
+			algorithmOperation = [[UninformedSearchOperation alloc] initWithFrontierTypeIsQueue:NO];
 		}
 		
 		else if ([name isEqualToString:BREADTH_FIRST_SEARCH]) {
-			algorithmOperation = [[BreadthFirstSearchOperation alloc] initWithCostFunctionBlock:costFunctionBlock];
+			algorithmOperation = [[UninformedSearchOperation alloc] initWithFrontierTypeIsQueue:YES];
 		}
 		
 		else if ([name isEqualToString:UNIFORM_COST_SEARCH] || [name isEqualToString:GREEDY_BEST_FIRST_SEARCH] || [name isEqualToString:A_STAR_SEARCH]) {
-			algorithmOperation = [[UniformCostSearch alloc] initWithCostFunctionBlock:costFunctionBlock];
+			algorithmOperation = [[UniformCostSearchOperation alloc] initWithCostFunctionBlock:costFunctionBlock];
 		}
 	}
 		
