@@ -42,15 +42,9 @@
 	while (frontier.count) {
 		// choose the cell with the lowest path cost
 		Cell *cell = [frontier dequeueObjectWithLowestCostForBlock:self.costFunctionBlock goalPoint:goalCell.coordinate];
-		
-		BOOL goalReached = [cell isEqual:goalCell];
-		
-		// add cell to explored
-		[explored addObject:cell];
 		[cell setVisited:YES];
 		
-		// update the number of nodes expandned
-		self.numberOfNodesExpanded++;
+		BOOL goalReached = [cell isEqual:goalCell];
 		
 		if (goalReached) {
 			self.pathCost = [self pathCostForGoalCell:goalCell];
@@ -58,6 +52,12 @@
 			
 			return;
 		}
+		
+		// add cell to explored
+		[explored addObject:cell];
+		
+		// update the number of nodes expandned
+		self.numberOfNodesExpanded++;
 		
 		[self.delegate tookStep];
 		
