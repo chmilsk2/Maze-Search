@@ -14,6 +14,7 @@
 #define LABEL_VERTICAL_MARGIN 8.0f
 #define LABEL_HORIZONTAL_MARGIN 14.0f
 #define LABEL_HEIGHT 20.0f
+#define MAX_CELL_SIZE 30
 
 #define PATH_COST_LABEL_TEXT @"Path Cost:"
 #define NUMBER_OF_NODES_EXPANDED_TEXT @"Number of Nodes Expanded:"
@@ -72,7 +73,7 @@
 		_goalColorVisited = [UIColor colorWithRed:64.0/255.0 green:255.0/255.0 blue:153.0/255.0 alpha:1.0];
 		
 		// wall color
-		_wallColor = [UIColor colorWithRed:64.0/255.0 green:64.0/255.0 blue:64.0/255.0 alpha:1.0];
+		_wallColor = [UIColor blackColor];
 		
 		// path colors
 		_pathColorUnvisited = self.backgroundColor;
@@ -167,6 +168,10 @@
 	
 	if ((NSInteger)cellSize % 2) {
 		cellSize -= 1;
+	}
+	
+	if (cellSize > MAX_CELL_SIZE) {
+		cellSize = cellSize/2;
 	}
 	
 	boardWidth = cellSize * numberOfCols;
