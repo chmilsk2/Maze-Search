@@ -11,7 +11,6 @@
 @interface SearchAlgorithmOperation ()
 
 @property Maze *maze;
-@property (copy) CostFunctionBlock costFunctionBlock;
 
 - (void)pathSolutionUsingGoalCell:(Cell *)goalCell;
 - (void)didFinish;
