@@ -13,7 +13,7 @@
 @property Maze *maze;
 @property (copy) CostFunctionBlock costFunctionBlock;
 
-- (NSUInteger)pathCostForGoalCell:(Cell *)goalCell;
+- (void)pathSolutionUsingGoalCell:(Cell *)goalCell;
 - (void)didFinish;
 
 @end

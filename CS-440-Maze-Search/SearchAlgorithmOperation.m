@@ -30,20 +30,16 @@
 	// no-op
 }
 
-- (NSUInteger)pathCostForGoalCell:(Cell *)goalCell {
-	// follow the parent path all the way back to the starting cell whose parent is nil
-	NSUInteger pathCost = 0;
-	
+- (void)pathSolutionUsingGoalCell:(Cell *)goalCell {
+	// follow the parent path all the way back to the starting cell whose parent is nil	
 	Cell *cell = goalCell;
 	
 	while (cell.parent) {
 		cell = cell.parent;
 		cell.isOnSolutionPath = YES;
-		pathCost++;
 	}
-	
-	return pathCost;
 }
+
 
 - (void)didFinish {
 	if (self.algorithmCompletionHandler) {
