@@ -39,9 +39,8 @@
 		05A8A53017F3AD320011AD25 /* SearchAlgorithmOperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A8A52F17F3AD320011AD25 /* SearchAlgorithmOperationFactory.m */; };
 		05A8A53617F3CF5D0011AD25 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A8A53517F3CF5D0011AD25 /* Cell.m */; };
 		05A8A53A17F3D1DE0011AD25 /* Frontier.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A8A53917F3D1DE0011AD25 /* Frontier.m */; };
-		05E7BD2217F79FF400030AB1 /* GreedyBestFirstSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E7BD2117F79FF400030AB1 /* GreedyBestFirstSearch.m */; };
+		05E7BD2217F79FF400030AB1 /* UniformCostSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E7BD2117F79FF400030AB1 /* UniformCostSearch.m */; };
 		05E7BD3217F7C5E700030AB1 /* CostFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E7BD3117F7C5E700030AB1 /* CostFunctions.m */; };
-		05E7BD3817F7CEA900030AB1 /* AStarSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E7BD3717F7CEA900030AB1 /* AStarSearchOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,13 +113,11 @@
 		05A8A53817F3D1DE0011AD25 /* Frontier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Frontier.h; sourceTree = "<group>"; };
 		05A8A53917F3D1DE0011AD25 /* Frontier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Frontier.m; sourceTree = "<group>"; };
 		05C4B6ED17F72C4F008832D1 /* CellState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellState.h; sourceTree = "<group>"; };
-		05E7BD2017F79FF400030AB1 /* GreedyBestFirstSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreedyBestFirstSearch.h; sourceTree = "<group>"; };
-		05E7BD2117F79FF400030AB1 /* GreedyBestFirstSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreedyBestFirstSearch.m; sourceTree = "<group>"; };
+		05E7BD2017F79FF400030AB1 /* UniformCostSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniformCostSearch.h; sourceTree = "<group>"; };
+		05E7BD2117F79FF400030AB1 /* UniformCostSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniformCostSearch.m; sourceTree = "<group>"; };
 		05E7BD3017F7C5E700030AB1 /* CostFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CostFunctions.h; sourceTree = "<group>"; };
 		05E7BD3117F7C5E700030AB1 /* CostFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CostFunctions.m; sourceTree = "<group>"; };
 		05E7BD3317F7CCCC00030AB1 /* CostFunctionBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CostFunctionBlock.h; sourceTree = "<group>"; };
-		05E7BD3617F7CEA900030AB1 /* AStarSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStarSearchOperation.h; sourceTree = "<group>"; };
-		05E7BD3717F7CEA900030AB1 /* AStarSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AStarSearchOperation.m; sourceTree = "<group>"; };
 		05E7BD3917F7E77800030AB1 /* SupportedAlgorithmNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportedAlgorithmNames.h; sourceTree = "<group>"; };
 		05E7BD3C17F7E86300030AB1 /* CostFunctionNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CostFunctionNames.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -407,10 +404,8 @@
 				05A8A52317F3A2420011AD25 /* DepthFirstSearchOperation.m */,
 				05A8A52517F3A2590011AD25 /* BreadthFirstSearchOperation.h */,
 				05A8A52617F3A2590011AD25 /* BreadthFirstSearchOperation.m */,
-				05E7BD2017F79FF400030AB1 /* GreedyBestFirstSearch.h */,
-				05E7BD2117F79FF400030AB1 /* GreedyBestFirstSearch.m */,
-				05E7BD3617F7CEA900030AB1 /* AStarSearchOperation.h */,
-				05E7BD3717F7CEA900030AB1 /* AStarSearchOperation.m */,
+				05E7BD2017F79FF400030AB1 /* UniformCostSearch.h */,
+				05E7BD2117F79FF400030AB1 /* UniformCostSearch.m */,
 			);
 			name = Algorithms;
 			sourceTree = "<group>";
@@ -522,7 +517,6 @@
 				05A8A52117F3A0740011AD25 /* Solver.m in Sources */,
 				0552468117F0A56900D90397 /* AppDelegate.m in Sources */,
 				05A8A52717F3A2590011AD25 /* BreadthFirstSearchOperation.m in Sources */,
-				05E7BD3817F7CEA900030AB1 /* AStarSearchOperation.m in Sources */,
 				055246F217F2798C00D90397 /* SupportedAlgorithms.m in Sources */,
 				055246D617F0DCDC00D90397 /* MazeParsingOperation.m in Sources */,
 				055246D917F1180B00D90397 /* SupportedMazes.m in Sources */,
@@ -530,7 +524,7 @@
 				055246CA17F0CCBF00D90397 /* MazeManager.m in Sources */,
 				055246CD17F0CDAF00D90397 /* Maze.m in Sources */,
 				05A8A52B17F3A5010011AD25 /* SearchAlgorithmOperation.m in Sources */,
-				05E7BD2217F79FF400030AB1 /* GreedyBestFirstSearch.m in Sources */,
+				05E7BD2217F79FF400030AB1 /* UniformCostSearch.m in Sources */,
 				055246D317F0CEDA00D90397 /* QueuePool.m in Sources */,
 				05A8A53017F3AD320011AD25 /* SearchAlgorithmOperationFactory.m in Sources */,
 				05E7BD3217F7C5E700030AB1 /* CostFunctions.m in Sources */,
