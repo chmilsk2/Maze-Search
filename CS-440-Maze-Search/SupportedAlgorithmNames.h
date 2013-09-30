@@ -10,5 +10,6 @@
 
 #define DEPTH_FIRST_SEARCH @"Depth-First Search"
 #define BREADTH_FIRST_SEARCH @"Breadth-First Search"
+#define UNIFORM_COST_SEARCH @"Uniform Cost Search"
 #define GREEDY_BEST_FIRST_SEARCH @"Greedy Best-First Search"
 #define A_STAR_SEARCH @"A* Search"
