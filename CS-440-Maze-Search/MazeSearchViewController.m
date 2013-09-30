@@ -116,8 +116,7 @@
 	
 	SearchAlgorithmOperation *algorithmOperation = [searchAlgorithmOperationFactory searchAlgorithmOperationForName:algorithmOperationName costFunctionName:costFunctionName];
 	
-	solver.solverCompletionHandler = ^(NSUInteger pathCost, NSUInteger numberOfNodesExpanded, NSUInteger maximumTreeDepthSearched, NSUInteger maximumFrontierSize) {\
-		
+	solver.solverCompletionHandler = ^(NSUInteger pathCost, NSUInteger numberOfNodesExpanded, NSUInteger maximumTreeDepthSearched, NSUInteger maximumFrontierSize) {
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[self.mazeView.pathCostLabel setText:[NSString stringWithFormat:@"%@ %lu", PATH_COST_LABEL_TEXT, (unsigned long)pathCost]];
 			[self.mazeView.numberOfNodesExpandedLabel setText:[NSString stringWithFormat:@"%@ %lu", NUMBER_OF_NODES_EXPANDED_TEXT, (unsigned long)numberOfNodesExpanded]];
