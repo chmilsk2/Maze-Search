@@ -20,6 +20,7 @@
 		_isOnSolutionPath = NO;
 		_parent = nil;
 		_depth = 0;
+		_costIncurred = 0;
 	}
 	
 	return self;

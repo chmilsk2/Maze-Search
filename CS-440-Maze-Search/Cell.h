@@ -16,6 +16,7 @@
 @property BOOL isOnSolutionPath;
 
 @property NSUInteger depth;
+@property NSUInteger costIncurred;
 @property Cell *parent;
 
 - (id)initWithState:(NSUInteger)state coordinate:(CGPoint)coordinate;
