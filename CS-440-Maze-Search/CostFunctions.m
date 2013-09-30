@@ -12,6 +12,11 @@
 
 @implementation CostFunctions
 
+static CGFloat(^ManhattanDistance)(CGPoint point1, CGPoint point2) = ^CGFloat(CGPoint point1, CGPoint point2) {
+	CGFloat manhattanDistance = fabs(point1.x - point2.x) + fabs(point1.y - point2.y);
+	return manhattanDistance;
+};
+
 + (NSArray *)costFunctionNamesForAlgorithmName:(NSString *)algorithmName {
 	NSArray *costFunctionNames;
 	
@@ -19,8 +24,16 @@
 		costFunctionNames = @[NONE];
 	}
 	
-	else if ([algorithmName isEqualToString:GREEDY_BEST_FIRST_SEARCH] || [algorithmName isEqualToString:A_STAR_SEARCH]) {
-		costFunctionNames = @[MANHATTAN_DISTANCE_COST_FUNCTION_NAME, C1_COST_FUNCTION_NAME, C2_COST_FUNCTION_NAME];
+	else if ([algorithmName isEqualToString:UNIFORM_COST_SEARCH]) {
+		costFunctionNames = @[C1_COST_FUNCTION_NAME, C2_COST_FUNCTION_NAME];
+	}
+	
+	else if ([algorithmName isEqualToString:GREEDY_BEST_FIRST_SEARCH]) {
+		costFunctionNames = @[GREEDY_MANHATTAN_COST_FUNCTION_NAME];
+	}
+	
+	else if ([algorithmName isEqualToString:A_STAR_SEARCH]) {
+		costFunctionNames = @[A_STAR_MANAHTTAN_PLUS_UNIFORM_STEP_COST_FUNCTION_NAME];
 	}
 	
 	return costFunctionNames;
@@ -33,29 +46,37 @@
 }
 
 + (CostFunctionBlock)costFunctionForName:(NSString *)costFunctionName {
+	
 	CostFunctionBlock costFunctionBlock;
 	if ([costFunctionName isEqualToString:NONE]) {
 		costFunctionBlock = nil;
 	}
 	
-	if ([costFunctionName isEqualToString:MANHATTAN_DISTANCE_COST_FUNCTION_NAME]) {
-		costFunctionBlock = [^(CGPoint point1, CGPoint point2) {
-			CGFloat manhattantDistance = fabs(point1.x - point2.x) + fabs(point1.y - point2.y);
-			return manhattantDistance;
-		} copy];
-	}
-	
 	else if ([costFunctionName isEqualToString:C1_COST_FUNCTION_NAME]) {
-		costFunctionBlock = [^(CGPoint point) {
-			CGFloat c1 = (1/(powf(2, point.x)));
+		costFunctionBlock = [^(CGPoint point1, CGPoint point2, CGFloat costIncurred) {
+			CGFloat c1 = (1/(powf(2, point1.x)));
 			return c1;
 		} copy];
 	}
 	
 	else if ([costFunctionName isEqualToString:C2_COST_FUNCTION_NAME]) {
-		costFunctionBlock = [^(CGPoint point){
-			CGFloat c2 = powf(2, point.x);
+		costFunctionBlock = [^(CGPoint point1, CGPoint point2, CGFloat costIncurred){
+			CGFloat c2 = powf(2, point1.x);
 			return c2;
+		} copy];
+	}
+	
+	else if ([costFunctionName isEqualToString:GREEDY_MANHATTAN_COST_FUNCTION_NAME]) {
+		costFunctionBlock = [^(CGPoint point1, CGPoint point2, CGFloat costIncurred) {
+			CGFloat manhattantDistance = ManhattanDistance(point1, point2);
+			return manhattantDistance;
+		} copy];
+	}
+	
+	else if ([costFunctionName isEqualToString:A_STAR_MANAHTTAN_PLUS_UNIFORM_STEP_COST_FUNCTION_NAME]) {
+		costFunctionBlock = [^(CGPoint point1, CGPoint point2, CGFloat costIncurred) {
+			CGFloat aStarManhattanPlusUniformStepCost = costIncurred + ManhattanDistance(point1, point2);
+			return aStarManhattanPlusUniformStepCost;
 		} copy];
 	}
 	
