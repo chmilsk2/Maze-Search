@@ -25,6 +25,4 @@ typedef void(^AlgorithmHandler)(NSUInteger, NSUInteger, NSUInteger, NSUInteger);
 @property NSUInteger maximumTreeDepthSearched;
 @property NSUInteger maximumFrontierSize;
 
-- (id)initWithCostFunctionBlock:(CostFunctionBlock)costFunctionBlock;
-
 @end

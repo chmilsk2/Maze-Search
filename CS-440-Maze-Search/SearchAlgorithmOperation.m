@@ -11,12 +11,10 @@
 
 @implementation SearchAlgorithmOperation
 
-- (id)initWithCostFunctionBlock:(CostFunctionBlock)costFunctionBlock {
+- (id)init {
 	self = [super init];
 	
 	if (self) {
-		_costFunctionBlock = costFunctionBlock;
-		
 		_pathCost = 0;
 		_numberOfNodesExpanded = 0;
 		_maximumTreeDepthSearched = 0;
