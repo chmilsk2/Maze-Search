@@ -16,7 +16,7 @@
 	NSArray *costFunctionNames;
 	
 	if ([algorithmName isEqualToString:DEPTH_FIRST_SEARCH] || [algorithmName isEqualToString:BREADTH_FIRST_SEARCH]) {
-		costFunctionNames = @[NONE, C1_COST_FUNCTION_NAME, C2_COST_FUNCTION_NAME];
+		costFunctionNames = @[NONE];
 	}
 	
 	else if ([algorithmName isEqualToString:GREEDY_BEST_FIRST_SEARCH] || [algorithmName isEqualToString:A_STAR_SEARCH]) {
