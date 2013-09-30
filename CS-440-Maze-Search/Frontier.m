@@ -70,7 +70,7 @@
 	__block id lowestCostObj;
 
 	[_frontier enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-		CGFloat cost = costFunction(((Cell *)obj).coordinate, goalPoint);
+		CGFloat cost = costFunction(((Cell *)obj).coordinate, goalPoint, ((Cell *)obj).costIncurred);
 		
 		if (cost < lowestCost) {
 			lowestCost = cost;
