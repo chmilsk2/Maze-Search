@@ -10,7 +10,7 @@
 #import "SupportedAlgorithmNames.h"
 
 NSArray * SupportedAlgorithms() {
-	return @[DEPTH_FIRST_SEARCH, BREADTH_FIRST_SEARCH, GREEDY_BEST_FIRST_SEARCH, A_STAR_SEARCH];
+	return @[DEPTH_FIRST_SEARCH, BREADTH_FIRST_SEARCH, UNIFORM_COST_SEARCH, GREEDY_BEST_FIRST_SEARCH, A_STAR_SEARCH];
 }
 
 NSString * AlgorithmNameAtIndex(NSInteger index) {
