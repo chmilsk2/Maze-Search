@@ -173,14 +173,6 @@
     return sectionHeader;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-	return INVISIBLE_FOOTER_HEIGHT;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-	return [[UIView alloc] init];
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MazeSettingsCellIdentifier forIndexPath:indexPath];
@@ -271,33 +263,8 @@
 	
 	NSArray *newCostFunctions = [CostFunctions costFunctionNamesForAlgorithmName:algorithmName];
 	
-	if (newCostFunctions.count > _costFunctionNamesForSelectedAlgorithm.count) {
-		// need to insert rows
-		NSMutableArray *indexPathsForCellsToAdd = [NSMutableArray array];
-		
-		for (NSUInteger i = 0; i < newCostFunctions.count; i++) {
-			BOOL isMatch = NO;
-			
-			for (NSUInteger j = 0; j < _costFunctionNamesForSelectedAlgorithm.count; j++) {
-				if ([newCostFunctions[i] isEqualToString:_costFunctionNamesForSelectedAlgorithm[j]]) {
-					isMatch = YES;
-				}
-			}
-			
-			if (!isMatch) {
-				[indexPathsForCellsToAdd addObject:[NSIndexPath indexPathForRow:i inSection:ListSectionCostFunction]];
-			}
- 		}
-		
-		_costFunctionNamesForSelectedAlgorithm = newCostFunctions;
-				 
-		[self.tableView beginUpdates];
-		[self.tableView insertRowsAtIndexPaths:indexPathsForCellsToAdd withRowAnimation:UITableViewRowAnimationNone];
-		[self.tableView endUpdates];
-	}
-	
-	else if (newCostFunctions.count < _costFunctionNamesForSelectedAlgorithm.count) {
-		// need to remove rows
+	if (_costFunctionNamesForSelectedAlgorithm.count > newCostFunctions.count) {
+		// check to see if there are any rows that need to be removed
 		NSMutableArray *indexPathsForCellsToRemove = [NSMutableArray array];
 		
 		for (NSUInteger i = 0; i < _costFunctionNamesForSelectedAlgorithm.count; i++) {
@@ -309,19 +276,44 @@
 				}
 			}
 			
-			if (!isMatch) {
+			if (!isMatch && i >= newCostFunctions.count) {
 				[indexPathsForCellsToRemove addObject:[NSIndexPath indexPathForRow:i inSection:ListSectionCostFunction]];
+			}
+		}
+		
+		_costFunctionNamesForSelectedAlgorithm = newCostFunctions;
+		
+		[self.tableView beginUpdates];
+		[self.tableView deleteRowsAtIndexPaths:indexPathsForCellsToRemove withRowAnimation:UITableViewRowAnimationNone];
+		[self.tableView endUpdates];
+	}
+	
+	else if (_costFunctionNamesForSelectedAlgorithm.count < newCostFunctions.count) {
+		// check to see if there are any row that need to be inserted
+		NSMutableArray *indexPathsForCellsToAdd = [NSMutableArray array];
+		
+		for (NSUInteger i = 0; i < newCostFunctions.count; i++) {
+			BOOL isMatch = NO;
+			
+			for (NSUInteger j = 0; j < _costFunctionNamesForSelectedAlgorithm.count; j++) {
+				if ([newCostFunctions[i] isEqualToString:_costFunctionNamesForSelectedAlgorithm[j]]) {
+					isMatch = YES;
+				}
+			}
+			
+			if (!isMatch && i >= _costFunctionNamesForSelectedAlgorithm.count) {
+				[indexPathsForCellsToAdd addObject:[NSIndexPath indexPathForRow:i inSection:ListSectionCostFunction]];
 			}
 		}
 		
 		_costFunctionNamesForSelectedAlgorithm = newCostFunctions;
 				 
 		[self.tableView beginUpdates];
-		[self.tableView deleteRowsAtIndexPaths:indexPathsForCellsToRemove withRowAnimation:UITableViewRowAnimationNone];
+		[self.tableView insertRowsAtIndexPaths:indexPathsForCellsToAdd withRowAnimation:UITableViewRowAnimationNone];
 		[self.tableView endUpdates];
 	}
 	
-	else {
+	else if (_costFunctionNamesForSelectedAlgorithm.count == newCostFunctions.count) {
 		_costFunctionNamesForSelectedAlgorithm = newCostFunctions;
 		[self.tableView reloadData];
 	}
