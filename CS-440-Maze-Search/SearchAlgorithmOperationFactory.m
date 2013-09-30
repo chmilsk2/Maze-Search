@@ -14,11 +14,7 @@
 #import "AStarSearchOperation.h"
 #import "CostFunctions.h"
 #import "CostFunctionBlock.h"
-
-#define DEPTH_FIRST_SEARCH @"Depth-First Search"
-#define BREADTH_FIRST_SEARCH @"Breadth-First Search"
-#define GREEDY_BEST_FIRST_SEARCH @"Greedy Best-First Search"
-#define A_STAR_SEARCH @"A* Search"
+#import "SupportedAlgorithmNames.h"
 
 @implementation SearchAlgorithmOperationFactory {
 	NSMutableDictionary *_algorithmOperationsDict;
