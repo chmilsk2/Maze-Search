@@ -10,8 +10,7 @@
 #import "SearchAlgorithmOperation.h"
 #import "DepthFirstSearchOperation.h"
 #import "BreadthFirstSearchOperation.h"
-#import "GreedyBestFirstSearch.h"
-#import "AStarSearchOperation.h"
+#import "UniformCostSearch.h"
 #import "CostFunctions.h"
 #import "CostFunctionBlock.h"
 #import "SupportedAlgorithmNames.h"
@@ -56,12 +55,8 @@
 			algorithmOperation = [[BreadthFirstSearchOperation alloc] initWithCostFunctionBlock:costFunctionBlock];
 		}
 		
-		else if ([name isEqualToString:GREEDY_BEST_FIRST_SEARCH]) {
-			algorithmOperation = [[GreedyBestFirstSearch alloc] initWithCostFunctionBlock:costFunctionBlock];
-		}
-		
-		else if ([name isEqualToString:A_STAR_SEARCH]) {
-			algorithmOperation = [[AStarSearchOperation alloc] initWithCostFunctionBlock:costFunctionBlock];
+		else if ([name isEqualToString:UNIFORM_COST_SEARCH] || [name isEqualToString:GREEDY_BEST_FIRST_SEARCH] || [name isEqualToString:A_STAR_SEARCH]) {
+			algorithmOperation = [[UniformCostSearch alloc] initWithCostFunctionBlock:costFunctionBlock];
 		}
 	}
 		
