@@ -40,6 +40,9 @@
 		05E7BD2217F79FF400030AB1 /* UniformCostSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E7BD2117F79FF400030AB1 /* UniformCostSearchOperation.m */; };
 		05E7BD3217F7C5E700030AB1 /* CostFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E7BD3117F7C5E700030AB1 /* CostFunctions.m */; };
 		05E7BD4417F938D000030AB1 /* UninformedSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E7BD4317F938D000030AB1 /* UninformedSearchOperation.m */; };
+		05E7BD5517F9DB0100030AB1 /* tinySearch.txt in Resources */ = {isa = PBXBuildFile; fileRef = 05E7BD5417F9DB0100030AB1 /* tinySearch.txt */; };
+		05E7BD5817F9DC6100030AB1 /* smallSearch.txt in Resources */ = {isa = PBXBuildFile; fileRef = 05E7BD5617F9DC6100030AB1 /* smallSearch.txt */; };
+		05E7BD5917F9DC6100030AB1 /* trickySearch.txt in Resources */ = {isa = PBXBuildFile; fileRef = 05E7BD5717F9DC6100030AB1 /* trickySearch.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +120,9 @@
 		05E7BD3C17F7E86300030AB1 /* CostFunctionNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CostFunctionNames.h; sourceTree = "<group>"; };
 		05E7BD4217F938D000030AB1 /* UninformedSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UninformedSearchOperation.h; sourceTree = "<group>"; };
 		05E7BD4317F938D000030AB1 /* UninformedSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UninformedSearchOperation.m; sourceTree = "<group>"; };
+		05E7BD5417F9DB0100030AB1 /* tinySearch.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tinySearch.txt; sourceTree = "<group>"; };
+		05E7BD5617F9DC6100030AB1 /* smallSearch.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = smallSearch.txt; sourceTree = "<group>"; };
+		05E7BD5717F9DC6100030AB1 /* trickySearch.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trickySearch.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,10 +226,8 @@
 		0552469F17F0A91000D90397 /* Mazes */ = {
 			isa = PBXGroup;
 			children = (
-				055246A017F0A92500D90397 /* smallMaze.txt */,
-				055246A117F0A92500D90397 /* mediumMaze.txt */,
-				055246A217F0A92500D90397 /* bigMaze.txt */,
-				055246A317F0A92500D90397 /* openMaze.txt */,
+				05E7BD5017F9C05D00030AB1 /* One Goal */,
+				05E7BD5117F9C08900030AB1 /* Multiple Goals */,
 			);
 			name = Mazes;
 			sourceTree = "<group>";
@@ -429,6 +433,27 @@
 			name = Solver;
 			sourceTree = "<group>";
 		};
+		05E7BD5017F9C05D00030AB1 /* One Goal */ = {
+			isa = PBXGroup;
+			children = (
+				055246A017F0A92500D90397 /* smallMaze.txt */,
+				055246A117F0A92500D90397 /* mediumMaze.txt */,
+				055246A217F0A92500D90397 /* bigMaze.txt */,
+				055246A317F0A92500D90397 /* openMaze.txt */,
+			);
+			name = "One Goal";
+			sourceTree = "<group>";
+		};
+		05E7BD5117F9C08900030AB1 /* Multiple Goals */ = {
+			isa = PBXGroup;
+			children = (
+				05E7BD5417F9DB0100030AB1 /* tinySearch.txt */,
+				05E7BD5617F9DC6100030AB1 /* smallSearch.txt */,
+				05E7BD5717F9DC6100030AB1 /* trickySearch.txt */,
+			);
+			name = "Multiple Goals";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -508,6 +533,9 @@
 				055246A617F0A92500D90397 /* bigMaze.txt in Resources */,
 				055246A417F0A92500D90397 /* smallMaze.txt in Resources */,
 				055246A717F0A92500D90397 /* openMaze.txt in Resources */,
+				05E7BD5817F9DC6100030AB1 /* smallSearch.txt in Resources */,
+				05E7BD5517F9DB0100030AB1 /* tinySearch.txt in Resources */,
+				05E7BD5917F9DC6100030AB1 /* trickySearch.txt in Resources */,
 				055246A517F0A92500D90397 /* mediumMaze.txt in Resources */,
 				0552468317F0A56900D90397 /* Images.xcassets in Resources */,
 			);
