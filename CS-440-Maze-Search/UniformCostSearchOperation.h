@@ -1,5 +1,5 @@
 //
-//  UniformCostSearch.h
+//  UniformCostSearchOperation.h
 //  CS-440-Maze-Search
 //
 //  Created by Troy Chmieleski on 9/28/13.
@@ -8,6 +8,8 @@
 
 #import "SearchAlgorithmOperation_Protected.h"
 
-@interface UniformCostSearch : SearchAlgorithmOperation
+@interface UniformCostSearchOperation : SearchAlgorithmOperation
+
+- (id)initWithCostFunctionBlock:(CostFunctionBlock)costFunctionBlock;
 
 @end

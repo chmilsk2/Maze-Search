@@ -1,27 +1,41 @@
 //
-//  UniformCostSearch.m
+//  UniformCostSearchOperation.m
 //  CS-440-Maze-Search
 //
 //  Created by Troy Chmieleski on 9/28/13.
 //  Copyright (c) 2013 Troy Chmieleski. All rights reserved.
 //
 
-#import "UniformCostSearch.h"
+#import "UniformCostSearchOperation.h"
 #import "Frontier.h"
 
-@implementation UniformCostSearch
+@interface UniformCostSearchOperation ()
+
+@property (copy) CostFunctionBlock costFunctionBlock;
+
+@end
+
+@implementation UniformCostSearchOperation
+
+- (id)initWithCostFunctionBlock:(CostFunctionBlock)costFunctionBlock {
+	self = [super init];
+	
+	if (self) {
+		_costFunctionBlock = costFunctionBlock;
+	}
+	
+	return self;
+}
 
 - (void)main {
-	[self UniformCostSearch];
+	[self uniformCostSearchOperation];
 	
 	[self didFinish];
 }
 
-- (void)UniformCostSearch {
-	// use a priority queue
-	
+- (void)uniformCostSearchOperation {
+	// use a priority queue	
 	Cell *startingCell = self.maze.startingCell;
-	
 	Cell *goalCell = self.maze.goalCell;
 	
 	if ([startingCell isEqual:goalCell]) {
@@ -72,6 +86,7 @@
 			// if not in explored or frontier
 			if (![explored containsObject:child] && ![frontier containsObject:child]) {
 				[frontier enqueueObject:child];
+				
 				// update the maximum frontier size
 				if (frontier.count > self.maximumFrontierSize) {
 					self.maximumFrontierSize = frontier.count;
