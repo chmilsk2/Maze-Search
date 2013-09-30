@@ -17,7 +17,7 @@
 #define MAZE_AND_ALGORITHM_LIST_NAV_TITLE @"Settings"
 #define MAZE_SECTION_HEADER @"Maze"
 #define ALGORITHM_SECTION_HEADER @"Algorithm"
-#define COST_FUNCTION_SECTION_HEADER @"Cost Function"
+#define COST_FUNCTION_SECTION_HEADER @"Cost Function: f(n)=g(n)+h(n)"
 #define MazeSettingsCellIdentifier @"MazeSettingsCell"
 #define INVISIBLE_FOOTER_HEIGHT .01f
 
