@@ -8,19 +8,24 @@
 
 #import "UniformCostSearchOperation.h"
 #import "Frontier.h"
+#import "SupportedMazes.h"
 
 @interface UniformCostSearchOperation ()
 
+@property NSMutableArray *multiGoaledPath;
 @property (copy) CostFunctionBlock costFunctionBlock;
 
 @end
 
-@implementation UniformCostSearchOperation
+@implementation UniformCostSearchOperation {
+	NSMutableArray *_mutliGoals;
+}
 
 - (id)initWithCostFunctionBlock:(CostFunctionBlock)costFunctionBlock {
 	self = [super init];
 	
 	if (self) {
+		_multiGoaledPath = [NSMutableArray array];
 		_costFunctionBlock = costFunctionBlock;
 	}
 	
@@ -28,19 +33,65 @@
 }
 
 - (void)main {
-	[self uniformCostSearchOperation];
+	
+	// perform suboptimal search using A* and manhattan distance for 1.4
+	if ([self.maze.name isEqualToString:SUPPORTED_MAZE_MEDIUM_SEARCH_FILENAME] || [self.maze.name isEqualToString:SUPPORTED_MAZE_BIG_SEARCH_FILENAME] ) {
+		Cell *startingCell = self.maze.startingCell;
+		
+		// while there are still goal cells in the maze
+		while (self.maze.goalCells.count) {
+			// need to have the updated starting cell here
+			
+			Cell *goal = [self findClosestGoalToStart:startingCell];
+			[self.maze.goalCells removeObject:goal];
+			
+			Maze *copyMaze = [[Maze alloc] initWithMaze:self.maze];
+			
+			[copyMaze removeStartingCell];
+			[copyMaze removeAllTheGoals];
+			[copyMaze addStartingCell:startingCell];
+			[copyMaze addGoal:goal];
+			
+			[self uniformCostSearchForMaze:copyMaze];
+			
+			startingCell = goal;
+		}
+		
+		[self.maze setIsOnSolutionPathForMultiGoaledPath:_multiGoaledPath];
+		[self.delegate tookStep];
+	}
+	
+	else {
+		[self uniformCostSearchForMaze:self.maze];
+	}
 	
 	[self didFinish];
 }
 
-- (void)uniformCostSearchOperation {
+- (Cell *)findClosestGoalToStart:(Cell *)start {
+	CGFloat lowestCost = CGFLOAT_MAX;
+	Cell *goal = nil;
+	
+	for (Cell *cell in self.maze.goalCells) {
+		CGFloat cost = self.costFunctionBlock(start.coordinate, cell.coordinate, 0);
+		
+		if (cost < lowestCost) {
+			goal = cell;
+			lowestCost = cost;
+		}
+	}
+	
+	return goal;
+}
+
+- (void)uniformCostSearchForMaze:(Maze *)maze {
 	// use a priority queue	
-	Cell *startingCell = self.maze.startingCell;
-	Cell *goalCell = self.maze.goalCell;
+	Cell *startingCell = maze.startingCell;
+	Cell *goalCell = maze.goalCell;
 	
 	if ([startingCell isEqual:goalCell]) {
 		// goal reached
-		[startingCell setVisited:YES];
+		[self.maze setVisitedForCell:startingCell];
 		[self.delegate tookStep];
 		return;
 	}
@@ -56,15 +107,18 @@
 	while (frontier.count) {
 		// choose the cell with the lowest path cost
 		Cell *cell = [frontier dequeueObjectWithLowestCostForBlock:self.costFunctionBlock goalPoint:goalCell.coordinate];
-		[cell setVisited:YES];
+		
+		[self.maze setVisitedForCell:cell];
 		
 		BOOL goalReached = [cell isEqual:goalCell];
 		
 		if (goalReached) {
-			self.pathCost = cell.costIncurred;
+			self.pathCost += cell.costIncurred;
 			
 			// show the path solution by following the cell's parent chain back to the root
-			[self pathSolutionUsingGoalCell:goalCell];
+			NSMutableArray *path = [self pathSolutionUsingGoalCell:goalCell];
+			
+			[_multiGoaledPath addObjectsFromArray:path];
 			
 			[self.delegate tookStep];
 			
@@ -80,7 +134,7 @@
 		[self.delegate tookStep];
 		
 		// look at the child cells
-		NSArray *children = [self.maze childrenForParent:cell];
+		NSArray *children = [maze childrenForParent:cell];
 		
 		for (Cell *child in children) {
 			// if not in explored or frontier
