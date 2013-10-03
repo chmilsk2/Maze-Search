@@ -9,9 +9,9 @@
 #import "SupportedMazes.h"
 
 NSArray * SupportedMazes() {
-	return @[@"smallMaze", @"mediumMaze", @"bigMaze", @"openMaze", @"tinySearch", @"smallSearch", @"trickySearch"];
+	return @[@"smallMaze", @"mediumMaze", @"bigMaze", @"openMaze", @"tinySearch", @"smallSearch",  @"mediumSearch", @"bigSearch", @"trickySearch"];
 }
 
 NSArray * SupportedMazeNames() {
-	return @[@"Small Maze", @"Medium Maze", @"Big Maze", @"Open Maze", @"Tiny Search", @"Small Search", @"Tricky Search"];
+	return @[@"Small Maze", @"Medium Maze", @"Big Maze", @"Open Maze", @"Tiny Search", @"Small Search", @"Medium Search", @"Big Search", @"Tricky Search"];
 }

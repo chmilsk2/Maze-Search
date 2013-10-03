@@ -43,6 +43,8 @@
 		05E7BD5517F9DB0100030AB1 /* tinySearch.txt in Resources */ = {isa = PBXBuildFile; fileRef = 05E7BD5417F9DB0100030AB1 /* tinySearch.txt */; };
 		05E7BD5817F9DC6100030AB1 /* smallSearch.txt in Resources */ = {isa = PBXBuildFile; fileRef = 05E7BD5617F9DC6100030AB1 /* smallSearch.txt */; };
 		05E7BD5917F9DC6100030AB1 /* trickySearch.txt in Resources */ = {isa = PBXBuildFile; fileRef = 05E7BD5717F9DC6100030AB1 /* trickySearch.txt */; };
+		05FE96ED17FD069F008E1CC8 /* bigSearch.txt in Resources */ = {isa = PBXBuildFile; fileRef = 05FE96EB17FD069F008E1CC8 /* bigSearch.txt */; };
+		05FE96EE17FD069F008E1CC8 /* mediumSearch.txt in Resources */ = {isa = PBXBuildFile; fileRef = 05FE96EC17FD069F008E1CC8 /* mediumSearch.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,8 @@
 		05E7BD5417F9DB0100030AB1 /* tinySearch.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tinySearch.txt; sourceTree = "<group>"; };
 		05E7BD5617F9DC6100030AB1 /* smallSearch.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = smallSearch.txt; sourceTree = "<group>"; };
 		05E7BD5717F9DC6100030AB1 /* trickySearch.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trickySearch.txt; sourceTree = "<group>"; };
+		05FE96EB17FD069F008E1CC8 /* bigSearch.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bigSearch.txt; sourceTree = "<group>"; };
+		05FE96EC17FD069F008E1CC8 /* mediumSearch.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mediumSearch.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +453,8 @@
 			children = (
 				05E7BD5417F9DB0100030AB1 /* tinySearch.txt */,
 				05E7BD5617F9DC6100030AB1 /* smallSearch.txt */,
+				05FE96EC17FD069F008E1CC8 /* mediumSearch.txt */,
+				05FE96EB17FD069F008E1CC8 /* bigSearch.txt */,
 				05E7BD5717F9DC6100030AB1 /* trickySearch.txt */,
 			);
 			name = "Multiple Goals";
@@ -538,6 +544,8 @@
 				05E7BD5917F9DC6100030AB1 /* trickySearch.txt in Resources */,
 				055246A517F0A92500D90397 /* mediumMaze.txt in Resources */,
 				0552468317F0A56900D90397 /* Images.xcassets in Resources */,
+				05FE96EE17FD069F008E1CC8 /* mediumSearch.txt in Resources */,
+				05FE96ED17FD069F008E1CC8 /* bigSearch.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
