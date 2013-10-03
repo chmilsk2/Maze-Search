@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Cell : NSObject
+@interface Cell : NSObject <NSCopying>
 
 @property NSUInteger state;
 @property CGPoint coordinate;

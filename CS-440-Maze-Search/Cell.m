@@ -61,4 +61,16 @@
 	return result;
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+	Cell *cell = [[Cell alloc] initWithState:self.state coordinate:self.coordinate];
+	
+	[cell setVisited:self.visited];
+	[cell setIsOnSolutionPath:self.isOnSolutionPath];
+	[cell setParent:self.parent];
+	[cell setDepth:self.depth];
+	[cell setCostIncurred:self.costIncurred];
+	
+	return cell;
+}
+
 @end
