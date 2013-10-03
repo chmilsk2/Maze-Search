@@ -12,7 +12,7 @@
 
 @property Maze *maze;
 
-- (void)pathSolutionUsingGoalCell:(Cell *)goalCell;
+- (NSMutableArray *)pathSolutionUsingGoalCell:(Cell *)goalCell;
 - (void)didFinish;
 
 @end

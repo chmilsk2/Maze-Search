@@ -28,14 +28,19 @@
 	// no-op
 }
 
-- (void)pathSolutionUsingGoalCell:(Cell *)goalCell {
-	// follow the parent path all the way back to the starting cell whose parent is nil	
+- (NSMutableArray *)pathSolutionUsingGoalCell:(Cell *)goalCell {
+	// follow the parent path all the way back to the starting cell whose parent is nil
+	NSMutableArray *path = [NSMutableArray array];
+	
 	Cell *cell = goalCell;
 	
 	while (cell.parent) {
 		cell = cell.parent;
 		cell.isOnSolutionPath = YES;
+		[path addObject:cell];
 	}
+	
+	return path;
 }
 
 
