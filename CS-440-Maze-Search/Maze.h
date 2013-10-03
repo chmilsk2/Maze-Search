@@ -21,7 +21,15 @@
 @property NSMutableArray *goalCells;
 
 - (id)initWithName:(NSString *)name cells:(NSArray *)cells width:(NSNumber *)width height:(NSNumber *)height startingCell:(Cell *)startingCell goalCell:(Cell *)goalCell goalCells:(NSMutableArray *)goalCells;
+- (id)initWithMaze:(Maze *)maze;
 - (NSArray *)childrenForParent:(Cell *)cell;
 - (BOOL)isGoalCell:(Cell *)cell;
+- (void)removeAllTheGoals;
+- (void)removeStartingCell;
+- (void)removeAllSolutions;
+- (void)addStartingCell:(Cell *)startingCell;
+- (void)addGoal:(Cell *)goal;
+- (void)setIsOnSolutionPathForMultiGoaledPath:(NSMutableArray *)multiGoaledPath;
+- (void)setVisitedForCell:(Cell *)cell;
 
 @end
