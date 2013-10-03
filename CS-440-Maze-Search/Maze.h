@@ -18,8 +18,10 @@
 @property NSArray *cells;
 @property (readonly) Cell *startingCell;
 @property (readonly) Cell *goalCell;
+@property NSMutableArray *goalCells;
 
-- (id)initWithName:(NSString *)name cells:(NSArray *)cells width:(NSNumber *)width height:(NSNumber *)height startingCell:(Cell *)startingCell goalCell:(Cell *)goalCell;
+- (id)initWithName:(NSString *)name cells:(NSArray *)cells width:(NSNumber *)width height:(NSNumber *)height startingCell:(Cell *)startingCell goalCell:(Cell *)goalCell goalCells:(NSMutableArray *)goalCells;
 - (NSArray *)childrenForParent:(Cell *)cell;
+- (BOOL)isGoalCell:(Cell *)cell;
 
 @end

@@ -12,7 +12,7 @@
 
 @implementation Maze
 
-- (id)initWithName:(NSString *)name cells:(NSArray *)cells width:(NSNumber *)width height:(NSNumber *)height startingCell:(Cell *)startingCell goalCell:(Cell *)goalCell{
+- (id)initWithName:(NSString *)name cells:(NSArray *)cells width:(NSNumber *)width height:(NSNumber *)height startingCell:(Cell *)startingCell goalCell:(Cell *)goalCell goalCells:(NSMutableArray *)goalCells {
 	self = [super init];
 	
 	if (self) {
@@ -22,6 +22,7 @@
 		_height = height;
 		_startingCell = startingCell;
 		_goalCell = goalCell;
+		_goalCells = goalCells;
 	}
 	
 	return self;
@@ -71,6 +72,20 @@
 	}
 	
 	return cell;
+}
+
+- (BOOL)isGoalCell:(Cell *)cell {
+	__block BOOL isGoalCell = NO;
+	
+	[_goalCells enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+		Cell *goalCell = obj;
+		
+		if (goalCell.coordinate.x == cell.coordinate.x && goalCell.coordinate.y == cell.coordinate.y) {
+			isGoalCell = YES;
+		}
+	}];
+	
+	return isGoalCell;
 }
 
 @end

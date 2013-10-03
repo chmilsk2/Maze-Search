@@ -62,6 +62,9 @@
 	Cell *startingCell;
 	Cell *goalCell;
 	
+	// create a goal cells array with all of the goals
+	NSMutableArray *goalCells = [NSMutableArray array];
+	
 	BOOL isStartingCell = NO;
 	BOOL isGoalCell = NO;
 	
@@ -108,11 +111,12 @@
 			if (isGoalCell) {
 				isGoalCell = NO;
 				goalCell = cell;
+				[goalCells addObject:goalCell];
 			}
 		}
 	}
 	
-	Maze *maze = [[Maze alloc] initWithName:_filename cells:cells width:width height:height startingCell:startingCell goalCell:goalCell];
+	Maze *maze = [[Maze alloc] initWithName:_filename cells:cells width:width height:height startingCell:startingCell goalCell:goalCell goalCells:goalCells];
 	
 	[self finishedParsingMazeWithMaze:maze];
 }
