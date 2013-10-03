@@ -70,7 +70,7 @@
 		
 		// goal colors
 		_goalColorUnvisited = [UIColor colorWithRed:0 green:255.0/255.0 blue:0 alpha:1.0];
-		_goalColorVisited = [UIColor colorWithRed:64.0/255.0 green:255.0/255.0 blue:153.0/255.0 alpha:1.0];
+		_goalColorVisited = [UIColor colorWithRed:64.0/255.0 green:64.0/255.0 blue:64.0/255.0 alpha:1.0];
 		
 		// wall color
 		_wallColor = [UIColor blackColor];
